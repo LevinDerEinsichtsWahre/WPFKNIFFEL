@@ -27,14 +27,19 @@ namespace KniffelLevinDaniel.viemodel
             private set { }
         }
 
+        private string dice2Text;
+
         public string Dice2Text
         {
-            get
-            {
-                return "1";
+            get 
+            { 
+                return dice2Text; 
             }
-
-            private set { }
+            set 
+            { 
+                dice2Text = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Dice2Text)));
+            }
         }
 
         public string Dice3Text
