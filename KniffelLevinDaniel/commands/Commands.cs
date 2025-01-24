@@ -1,14 +1,16 @@
-﻿using System;
+﻿using KniffelLevinDaniel.viemodel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace KniffelLevinDaniel.commands
 {
     abstract class Command : ICommand
     {
-        protected ViewModel viewModel;
+        protected Viewmodel viewModel;
 
         public event EventHandler CanExecuteChanged
         {
@@ -16,7 +18,7 @@ namespace KniffelLevinDaniel.commands
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public Command(ViewModel viewModel)
+        public Command(Viewmodel viewModel)
         {
             this.viewModel = viewModel;
         }
