@@ -1,8 +1,11 @@
-﻿using System;
+﻿using KniffelLevinDaniel.model;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace KniffelLevinDaniel.viemodel
 {
@@ -18,56 +21,53 @@ namespace KniffelLevinDaniel.viemodel
         {
             get
             {
-                return "1"
+                return "1";
             }
 
-            private set;
+            private set { }
         }
 
         public string Dice2Text
         {
             get
             {
-                return "1"
+                return "1";
             }
 
-            private set;
+            private set { }
         }
 
         public string Dice3Text
         {
             get
             {
-                return "1"
+                return "1";
             }
 
-            private set;
+            private set { }
         }
 
         public string Dice4Text
         {
             get
             {
-                return "1"
-                }
+                return "1";
+            }
 
-            private set;
+            private set { }
         }
 
         public string Dice5Text
         {
             get
             {
-                return "1"
-                }
+                return "1";
+            }
 
-            private set;
+            private set { }
         }
 
-        public MainViewModel()
-        {
-            this.NeuWürfeln = new NeuWürfeln(this);
-        }
+
 
     }
 }

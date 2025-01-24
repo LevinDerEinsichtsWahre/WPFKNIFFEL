@@ -1,4 +1,4 @@
-public class NeuWürfeln: Commands()
+public class NeuWürfeln : Commands()
 {
 
     private MainViewModel mainViewModel;
@@ -13,5 +13,6 @@ public class NeuWürfeln: Commands()
         foreach (var dice in mainViewModel.Dices)
         {
             dice.Reroll()
-            }
+        }
     }
+}
