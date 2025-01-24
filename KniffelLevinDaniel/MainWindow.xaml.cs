@@ -18,7 +18,7 @@ namespace KniffelLevinDaniel
     {
         public MainWindow()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
     }
 }
