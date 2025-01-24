@@ -8,5 +8,15 @@ namespace KniffelLevinDaniel.model
 {
     internal class Dice
     {
+        public int Value { get; set; }
+        public bool IsLocked { get; set; }
+        public void Roll(Random random)
+        {
+            if (!IsLocked)
+            {
+                Value = random.Next(1, 7);
+            }
+        }
+
     }
 }
