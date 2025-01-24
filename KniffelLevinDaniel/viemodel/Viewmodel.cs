@@ -1,4 +1,5 @@
-﻿using KniffelLevinDaniel.model;
+﻿using KniffelLevinDaniel.commands;
+using KniffelLevinDaniel.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,34 +12,41 @@ namespace KniffelLevinDaniel.viemodel
 {
     class Viewmodel : INotifyPropertyChanged
     {
+        public Viewmodel()
+        {
+            NeuWürfeln= new NeuWürfeln(this);
+            Dices = new List<Dice>();
+            for (int i = 0; i < 5; i++) {Dices.Add(new Dice());}
+        }
 
         public event PropertyChangedEventHandler? PropertyChanged;
         public ICommand NeuWürfeln { get; private set; }
 
         public List<Dice> Dices { get; private set; }
 
+        
         public string Dice1Text
         {
             get
             {
-                return "1";
+                return Dices[0].Value.ToString() ;
             }
 
-            private set { }
+            private set {}
         }
 
-        private string dice2Text;
+        
 
         public string Dice2Text
         {
             get 
             { 
-                return dice2Text; 
+                return Dices[1].Value.ToString(); 
             }
-            set 
+           private set 
             { 
-                dice2Text = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Dice2Text)));
+                //dice2Text = value;
+                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Dice2Text)));
             }
         }
 
@@ -46,7 +54,7 @@ namespace KniffelLevinDaniel.viemodel
         {
             get
             {
-                return "1";
+                return Dices[2].Value.ToString();
             }
 
             private set { }
@@ -56,7 +64,7 @@ namespace KniffelLevinDaniel.viemodel
         {
             get
             {
-                return "1";
+                return Dices[3].Value.ToString();
             }
 
             private set { }
@@ -66,7 +74,7 @@ namespace KniffelLevinDaniel.viemodel
         {
             get
             {
-                return "1";
+                return Dices[4].Value.ToString();
             }
 
             private set { }

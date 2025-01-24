@@ -8,12 +8,4 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="commands\NeuWüfeln.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="commands\NeuWüfeln.cs" />
-  </ItemGroup>
-
 </Project>

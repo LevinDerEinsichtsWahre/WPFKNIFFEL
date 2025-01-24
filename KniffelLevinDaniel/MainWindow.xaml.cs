@@ -19,6 +19,7 @@ namespace KniffelLevinDaniel
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new viemodel.Viewmodel();
         }
     }
 }

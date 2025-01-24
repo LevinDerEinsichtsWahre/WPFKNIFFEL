@@ -10,13 +10,20 @@ namespace KniffelLevinDaniel.model
     {
         public int Value { get; set; }
         public bool IsLocked { get; set; }
-        public void Roll(Random random)
+        Random random = new Random();
+        public Dice()
+        {
+            IsLocked = false;
+            Roll();
+        }
+
+        public int Roll()
         {
             if (!IsLocked)
             {
-                Value = random.Next(1, 7);
+              Value= random.Next(1, 7); 
             }
+            return Value;
         }
-
     }
 }
