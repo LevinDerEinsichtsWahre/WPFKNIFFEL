@@ -8,7 +8,6 @@ namespace KniffelLevinDaniel.model
 {
     public class Score
     {
-
         public int One { get; set; }
         public int Two { get; set; }
         public int Three { get; set; }

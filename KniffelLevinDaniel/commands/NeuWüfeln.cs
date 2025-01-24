@@ -12,7 +12,7 @@ public class NeuWürfeln : Commands()
     {
         foreach (var dice in mainViewModel.Dices)
         {
-            dice.Reroll()
+            dice.Roll()
         }
     }
 }

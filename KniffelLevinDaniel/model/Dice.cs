@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KniffelLevinDaniel.model
 {
-    internal class Dice
+    public class Dice
     {
         public int Value { get; set; }
         public bool IsLocked { get; set; }
