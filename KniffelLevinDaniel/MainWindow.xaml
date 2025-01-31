@@ -6,226 +6,241 @@
         xmlns:local="clr-namespace:KniffelLevinDaniel"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
-    
-    <Grid Background="Green">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="RoundBtn">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="3" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+
+    <Grid Background="#697565">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-			<ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
-		<StackPanel Grid.Row="0" Grid.Column="0" Background="#DDDDDD">
-			
-		</StackPanel>
-		<Grid Background="#DDDDDD" Grid.Row="0" Grid.Column="1">
+        <StackPanel Grid.Row="0" Grid.Column="0" Background="#ECDFCC">
 
-			<Grid.RowDefinitions>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="10"/>
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="20"/>
-			</Grid.ColumnDefinitions>
-			<Label Grid.Row="0" Grid.Column="1" Content="Spieler 1"/>
-			<Label Grid.Row="0" Grid.Column="2" Content="Spieler 2"/>
+        </StackPanel>
+        <Grid Background="#ECDFCC" Grid.Row="0" Grid.Column="1">
 
-			<Label Grid.Row="1" Grid.Column="0" Content="1-er"/>
-			<TextBox x:Name="onePlayerOne" Grid.Row="1" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Breite" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="onePlayerTwo" Grid.Row="1" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Breite" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="1" Content="Spieler 1" FontFamily="Impact"/>
+            <Label Grid.Row="0" Grid.Column="2" Content="Spieler 2" FontFamily="Impact"/>
 
-			<Label Grid.Row="2" Grid.Column="0" Content="2-er"/>
-			<TextBox x:Name="twoPlayerOne" Grid.Row="2" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="twoPlayerTwo" Grid.Row="2" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="1" Grid.Column="0" Content="Einser" FontFamily="Impact"/>
+            <TextBox x:Name="onePlayerOne" Grid.Row="1" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Breite" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="onePlayerTwo" Grid.Row="1" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Breite" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="3" Grid.Column="0" Content="3-er"/>
-			<TextBox x:Name="threePlayerOne" Grid.Row="3" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="threePlayerTwo" Grid.Row="3" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="2" Grid.Column="0" Content="Zweier" FontFamily="Impact"/>
+            <TextBox x:Name="twoPlayerOne" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="twoPlayerTwo" Grid.Row="2" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="4" Grid.Column="0" Content="4-er"/>
-			<TextBox x:Name="fourPlayerOne" Grid.Row="4" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="fourPlayerTwo" Grid.Row="4" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="3" Grid.Column="0" Content="Dreier" FontFamily="Impact"/>
+            <TextBox x:Name="threePlayerOne" Grid.Row="3" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="threePlayerTwo" Grid.Row="3" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="5" Grid.Column="0" Content="5-er"/>
-			<TextBox x:Name="fivePlayerOne" Grid.Row="5" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="fivePlayerTwo" Grid.Row="5" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="4" Grid.Column="0" Content="Vierer" FontFamily="Impact"/>
+            <TextBox x:Name="fourPlayerOne" Grid.Row="4" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="fourPlayerTwo" Grid.Row="4" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="6" Grid.Column="0" Content="6-er"/>
-			<TextBox x:Name="sixPlayerOne" Grid.Row="6" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="sixPlayerTwo" Grid.Row="6" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="5" Grid.Column="0" Content="Fünfer" FontFamily="Impact"/>
+            <TextBox x:Name="fivePlayerOne" Grid.Row="5" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="fivePlayerTwo" Grid.Row="5" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="7" Grid.Column="0" Content="Bonus"/>
-			<TextBox x:Name="bonusPlayerOne" Grid.Row="7" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="bonusPlayerTwo" Grid.Row="7" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="6" Grid.Column="0" Content="Sechser" FontFamily="Impact"/>
+            <TextBox x:Name="sixPlayerOne" Grid.Row="6" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="sixPlayerTwo" Grid.Row="6" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="8" Grid.Column="0" Content="Gesamt Oben"/>
-			<TextBox x:Name="allUpPlayerOne" Grid.Row="8" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="allUpPlayerTwo" Grid.Row="8" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="7" Grid.Column="0" Content="Bonus" FontFamily="Impact"/>
+            <TextBox x:Name="bonusPlayerOne" Grid.Row="7" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Background="LightGray">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="bonusPlayerTwo" Grid.Row="7" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1" Background="LightGray">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="9" Grid.Column="0" Content="Drilling"/>
-			<TextBox x:Name="threeOfAKindPlayerOne" Grid.Row="9" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="threeOfAKindPlayerTwo" Grid.Row="9" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="8" Grid.Column="0" Content="Gesamt Oben" FontFamily="Impact"/>
+            <TextBox x:Name="allUpPlayerOne" Grid.Row="8" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Background="LightGray">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="allUpPlayerTwo" Grid.Row="8" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1" Background="LightGray">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="10" Grid.Column="0" Content="Vierling"/>
-			<TextBox x:Name="fourOfAKindPlayerOne" Grid.Row="10" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="fourOfAKindPlayerTwo" Grid.Row="10" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="9" Grid.Column="0" Content="Drilling" FontFamily="Impact"/>
+            <TextBox x:Name="threeOfAKindPlayerOne" Grid.Row="9" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="threeOfAKindPlayerTwo" Grid.Row="9" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="11" Grid.Column="0" Content="Full House"/>
-			<TextBox x:Name="fullHousePlayerOne" Grid.Row="11" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="fullHousePlayerTwo" Grid.Row="11" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="10" Grid.Column="0" Content="Vierling" FontFamily="Impact"/>
+            <TextBox x:Name="fourOfAKindPlayerOne" Grid.Row="10" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="fourOfAKindPlayerTwo" Grid.Row="10" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="12" Grid.Column="0" Content="Kleine Straße"/>
-			<TextBox x:Name="smallStreetPlayerOne" Grid.Row="12" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="smallStreetPlayerTwo" Grid.Row="12" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="11" Grid.Column="0" Content="Full House" FontFamily="Impact"/>
+            <TextBox x:Name="fullHousePlayerOne" Grid.Row="11" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="fullHousePlayerTwo" Grid.Row="11" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="13" Grid.Column="0" Content="Große Straße"/>
-			<TextBox x:Name="bigStreetPlayerOne" Grid.Row="13" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="bigStreetPlayerTwo" Grid.Row="13" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="12" Grid.Column="0" Content="Kleine Straße" FontFamily="Impact"/>
+            <TextBox x:Name="smallStreetPlayerOne" Grid.Row="12" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="smallStreetPlayerTwo" Grid.Row="12" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="14" Grid.Column="0" Content="Kniffel"/>
-			<TextBox x:Name="kniffelPlayerOne" Grid.Row="14" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="kniffelPlayerTwo" Grid.Row="14" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="13" Grid.Column="0" Content="Große Straße" FontFamily="Impact"/>
+            <TextBox x:Name="bigStreetPlayerOne" Grid.Row="13" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="bigStreetPlayerTwo" Grid.Row="13" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="15" Grid.Column="0" Content="Chance"/>
-			<TextBox x:Name="chancePlayerOne" Grid.Row="15" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="chancePlayerTwo" Grid.Row="15" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="14" Grid.Column="0" Content="Kniffel" FontFamily="Impact"/>
+            <TextBox x:Name="kniffelPlayerOne" Grid.Row="14" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="kniffelPlayerTwo" Grid.Row="14" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="16" Grid.Column="0" Content="Gesamt Unten"/>
-			<TextBox x:Name="allDownPlayerOne" Grid.Row="16" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="allDownPlayerTwo" Grid.Row="16" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="15" Grid.Column="0" Content="Chance" FontFamily="Impact"/>
+            <TextBox x:Name="chancePlayerOne" Grid.Row="15" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="chancePlayerTwo" Grid.Row="15" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-			<Label Grid.Row="17" Grid.Column="0" Content="Gesamt"/>
-			<TextBox x:Name="allPlayerOne" Grid.Row="17" Grid.Column="1" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
-			<TextBox x:Name="allPlayerTwo" Grid.Row="17" Grid.Column="2" IsReadOnly="True">
-				<Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-			</TextBox>
+            <Label Grid.Row="16" Grid.Column="0" Content="Gesamt Unten" FontFamily="Impact"/>
+            <TextBox x:Name="allDownPlayerOne" Grid.Row="16" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Background="LightGray">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="allDownPlayerTwo" Grid.Row="16" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1" Background="LightGray">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-		</Grid>
-		<Grid Grid.Row="0" Grid.Column="2">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-			</Grid.RowDefinitions>
-			
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-			</Grid.ColumnDefinitions>
+            <Label Grid.Row="17" Grid.Column="0" Content="Gesamt" FontFamily="Impact"/>
+            <TextBox x:Name="allPlayerOne" Grid.Row="17" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Background="LightGray">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+            <TextBox x:Name="allPlayerTwo" Grid.Row="17" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1" Background="LightGray">
+                <Binding Path="Laenge" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
 
-            <Button Grid.Row="2" Grid.Column="6" Content="{Binding Path=Dice1Text}" Command="{Binding LockDiceCommand}" CommandParameter="0" Height="50" Width="50"/>
-            <Button Grid.Row="3" Grid.Column="2" Content="{Binding Path=Dice2Text}" Command="{Binding LockDiceCommand}" CommandParameter="1" Height="50" Width="50"/>
-            <Button Grid.Row="4" Grid.Column="9" Content="{Binding Path=Dice3Text}" Command="{Binding LockDiceCommand}" CommandParameter="2" Height="50" Width="50"/>
-            <Button Grid.Row="7" Grid.Column="3" Content="{Binding Path=Dice4Text}" Command="{Binding LockDiceCommand}" CommandParameter="3" Height="50" Width="50"/>
-            <Button Grid.Row="8" Grid.Column="7" Content="{Binding Path=Dice5Text}" Command="{Binding LockDiceCommand}" CommandParameter="4" Height="50" Width="50"/>
-            <Button Grid.Row="11" Grid.Column="4" Grid.ColumnSpan="3" Content="Neu Würfeln" Height="30" Width="100" Command="{Binding Path=NeuWürfeln}"/>
-		</Grid>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="2" Grid.Column="6" Content="{Binding Path=Dice1Text}" Command="{Binding Path=LockDice}" CommandParameter="0" Height="50" Width="50"/>
+            <Button Grid.Row="3" Grid.Column="2" Content="{Binding Path=Dice2Text}" Command="{Binding Path=LockDice}" CommandParameter="1" Height="50" Width="50"/>
+            <Button Grid.Row="4" Grid.Column="9" Content="{Binding Path=Dice3Text}" Command="{Binding Path=LockDice}" CommandParameter="2" Height="50" Width="50"/>
+            <Button Grid.Row="7" Grid.Column="3" Content="{Binding Path=Dice4Text}" Command="{Binding Path=LockDice}" CommandParameter="3" Height="50" Width="50"/>
+            <Button Grid.Row="8" Grid.Column="7" Content="{Binding Path=Dice5Text}" Command="{Binding Path=LockDice}" CommandParameter="4" Height="50" Width="50"/>
+            <Button Style="{StaticResource RoundBtn}" Grid.Row="11" Grid.Column="4" Grid.ColumnSpan="3" Content="Neu Würfeln" Height="30" Width="100" Command="{Binding Path=NeuWürfeln}" BorderBrush="LightGray" BorderThickness="0.5"/>
+        </Grid>
 
     </Grid>
 </Window>

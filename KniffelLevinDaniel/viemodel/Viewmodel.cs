@@ -51,6 +51,7 @@ namespace KniffelLevinDaniel.viemodel
             OnPropertyChanged(nameof(Dice5Text));
         }
 
+        
         public void ToggleDiceLock(int index)
         {
             Dices[index].ToggleLock();
