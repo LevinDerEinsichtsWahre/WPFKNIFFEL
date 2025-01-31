@@ -79,7 +79,7 @@ namespace KniffelLevinDaniel.model
             get
             {
                 int bonus = 0;
-                if (getCountTop() > 62)
+                if (GetCountTop() > 62)
                 {
                     bonus = 35;
                 }
@@ -165,22 +165,20 @@ namespace KniffelLevinDaniel.model
             }
         }
 
-        public int getCountTop()
+        public int GetCountTop()
         {
             return One + Two + Three + Four + Five + Six;
         }
 
-        public int getCountDown()
+        public int GetCountDown()
         {
             return ThreeOfAKind + FourOfAKind + FullHouse + SmallStreet + BigStreet + Kniffel + Chance;
         }
 
-        public int getCountAll()
+        public int GetCountAll()
         {
-            return getCountTop() + getCountDown();
+            return GetCountTop() + GetCountDown();
         }
-
-
         
     }
 }
