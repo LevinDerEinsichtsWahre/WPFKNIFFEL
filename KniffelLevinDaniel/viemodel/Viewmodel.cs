@@ -9,8 +9,19 @@ namespace KniffelLevinDaniel.viemodel
 {
     class Viewmodel : INotifyPropertyChanged
     {
+        public ICommand NeuWürfeln { get; private set; }
+        public ICommand LockDice { get; private set; }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public ObservableCollection<Dice> Dices { get; private set; }
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public Viewmodel()
         {
+            LockDice = new LockDice(this);
             NeuWürfeln = new NeuWürfeln(this);
             Dices = new ObservableCollection<Dice>();
             for (int i = 0; i < 5; i++)
@@ -19,21 +30,17 @@ namespace KniffelLevinDaniel.viemodel
             }
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //Dice Methods for the UI 
+        public string Dice1Text => FormatDiceText(0);
+        public string Dice2Text => FormatDiceText(1);
+        public string Dice3Text => FormatDiceText(2);
+        public string Dice4Text => FormatDiceText(3);
+        public string Dice5Text => FormatDiceText(4);
+
+        private string FormatDiceText(int index)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            return Dices[index].IsLocked ? $"[{Dices[index].Value}]" : Dices[index].Value.ToString();
         }
-
-        public ICommand NeuWürfeln { get; private set; }
-
-        public ObservableCollection<Dice> Dices { get; private set; }
-
-        public string Dice1Text => Dices[0].Value.ToString();
-        public string Dice2Text => Dices[1].Value.ToString();
-        public string Dice3Text => Dices[2].Value.ToString();
-        public string Dice4Text => Dices[3].Value.ToString();
-        public string Dice5Text => Dices[4].Value.ToString();
 
         public void UpdateDiceValues()
         {
@@ -44,5 +51,10 @@ namespace KniffelLevinDaniel.viemodel
             OnPropertyChanged(nameof(Dice5Text));
         }
 
+        public void ToggleDiceLock(int index)
+        {
+            Dices[index].ToggleLock();
+            UpdateDiceValues();
+        }
     }
 }
