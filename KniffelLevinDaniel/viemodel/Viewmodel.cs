@@ -1,11 +1,8 @@
 ﻿using KniffelLevinDaniel.commands;
 using KniffelLevinDaniel.model;
-using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
 namespace KniffelLevinDaniel.viemodel
@@ -14,73 +11,38 @@ namespace KniffelLevinDaniel.viemodel
     {
         public Viewmodel()
         {
-            NeuWürfeln= new NeuWürfeln(this);
-            Dices = new List<Dice>();
-            for (int i = 0; i < 5; i++) {Dices.Add(new Dice());}
+            NeuWürfeln = new NeuWürfeln(this);
+            Dices = new ObservableCollection<Dice>();
+            for (int i = 0; i < 5; i++)
+            {
+                Dices.Add(new Dice());
+            }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public ICommand NeuWürfeln { get; private set; }
 
-        public List<Dice> Dices { get; private set; }
+        public ObservableCollection<Dice> Dices { get; private set; }
 
-        
-        public string Dice1Text
+        public string Dice1Text => Dices[0].Value.ToString();
+        public string Dice2Text => Dices[1].Value.ToString();
+        public string Dice3Text => Dices[2].Value.ToString();
+        public string Dice4Text => Dices[3].Value.ToString();
+        public string Dice5Text => Dices[4].Value.ToString();
+
+        public void UpdateDiceValues()
         {
-            get
-            {
-                return Dices[0].Value.ToString() ;
-            }
-
-            private set {}
+            OnPropertyChanged(nameof(Dice1Text));
+            OnPropertyChanged(nameof(Dice2Text));
+            OnPropertyChanged(nameof(Dice3Text));
+            OnPropertyChanged(nameof(Dice4Text));
+            OnPropertyChanged(nameof(Dice5Text));
         }
-
-        
-
-        public string Dice2Text
-        {
-            get 
-            { 
-                return Dices[1].Value.ToString(); 
-            }
-           private set 
-            { 
-                //dice2Text = value;
-                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Dice2Text)));
-            }
-        }
-
-        public string Dice3Text
-        {
-            get
-            {
-                return Dices[2].Value.ToString();
-            }
-
-            private set { }
-        }
-
-        public string Dice4Text
-        {
-            get
-            {
-                return Dices[3].Value.ToString();
-            }
-
-            private set { }
-        }
-
-        public string Dice5Text
-        {
-            get
-            {
-                return Dices[4].Value.ToString();
-            }
-
-            private set { }
-        }
-
-
 
     }
 }

@@ -223,9 +223,7 @@
 			<Button Grid.Row="3" Grid.Column="2" Content="{Binding Path=Dice2Text}" Height="50" Width="50"/>
 			<Button Grid.Row="4" Grid.Column="9" Content="{Binding Path=Dice3Text}" Height="50" Width="50"/>
 			<Button Grid.Row="7" Grid.Column="3" Content="{Binding Path=Dice4Text}" Height="50" Width="50"/>
-            <Button Grid.Row="8" Grid.Column="7" Height="50" Width="50">
-                <Binding Path="Dice5Text" UpdateSourceTrigger="Default" Delay="300"></Binding>
-            </Button>
+            <Button Grid.Row="8" Grid.Column="7" Content="{Binding Path=Dice5Text}" Height="50" Width="50"/>
             <Button Grid.Row="11" Grid.Column="4" Grid.ColumnSpan="3" Content="Neu Würfeln" Height="30" Width="100" Command="{Binding Path=NeuWürfeln}"/>
 		</Grid>
 

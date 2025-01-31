@@ -7,21 +7,23 @@ using System.Threading.Tasks;
 
 namespace KniffelLevinDaniel.commands
 {
-    internal class NeuWürfeln: Command
+    internal class NeuWürfeln : Command
     {
-        
+        private readonly Viewmodel _viewModel;
 
+        public event EventHandler? CanExecuteChanged;
         public NeuWürfeln(Viewmodel viewModel) : base(viewModel)
         {
-            
+            _viewModel = viewModel;
         }
 
         public override void Execute(object parameter)
         {
             foreach (var dice in viewModel.Dices)
             {
-                 dice.Roll().ToString();
+                dice.Roll().ToString();
             }
+            _viewModel.UpdateDiceValues();
         }
     }
 }
