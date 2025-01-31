@@ -11,6 +11,7 @@ namespace KniffelLevinDaniel.model
         public int Value { get; set; }
         public bool IsLocked { get; set; }
         Random random = new Random();
+        
         public Dice()
         {
             IsLocked = false;
@@ -21,9 +22,13 @@ namespace KniffelLevinDaniel.model
         {
             if (!IsLocked)
             {
-              Value= random.Next(1, 7); 
+                Value = random.Next(1, 7);
             }
             return Value;
+        }
+        public void ToggleLock()
+        {
+            IsLocked = !IsLocked;
         }
     }
 }
