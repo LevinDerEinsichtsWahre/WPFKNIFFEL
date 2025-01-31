@@ -10,8 +10,6 @@ namespace KniffelLevinDaniel.commands
     internal class NeuWürfeln : Command
     {
         private readonly Viewmodel _viewModel;
-
-        public event EventHandler? CanExecuteChanged;
         public NeuWürfeln(Viewmodel viewModel) : base(viewModel)
         {
             _viewModel = viewModel;
