@@ -26,11 +26,11 @@ namespace KniffelLevinDaniel.model
                 switch (d.Value)
                 {
                     case 1: numbers[0]++; break;
-                    case 2: numbers[0]++; break;
-                    case 3: numbers[0]++; break;
-                    case 4: numbers[0]++; break;
-                    case 5: numbers[0]++; break;
-                    case 6: numbers[0]++; break;
+                    case 2: numbers[1]++; break;
+                    case 3: numbers[2]++; break;
+                    case 4: numbers[3]++; break;
+                    case 5: numbers[4]++; break;
+                    case 6: numbers[5]++; break;
                 }
             }
         }
@@ -70,17 +70,17 @@ namespace KniffelLevinDaniel.model
                         hasMinOne++;
                     }
                 }
-                if (hasMinOne == streetSize)
+                if (hasMinOne >= streetSize)
                 {
-                    int isInRow = 0;
-                    int lastNumber = 0;
-                    for (int i = 0; i > numbers.Length; i++)
+                    int isInRow = 1;
+                    int lastNumber = numbers[0];
+                    for (int i = 1; i < numbers.Length; i++)
                     {
                         if (numbers[i] > 0 && lastNumber > 0)
                         {
                             isInRow++;
                         }
-                        else if (isInRow != streetSize)
+                        else if (isInRow != streetSize && !(numbers[i] > 0 && lastNumber > 0))
                         {
                             isInRow = 0;
                         }
@@ -100,16 +100,19 @@ namespace KniffelLevinDaniel.model
 
         public int checkForSame(int sameSize)
         {
-            if (sameSize == 3 || sameSize == 4 || sameSize == 5) 
-            checkForNumbers();
-            for (int i = 0; i < numbers.Length; i++)
+            if (sameSize == 3 || sameSize == 4 || sameSize == 5)
             {
-                if (numbers[i] == sameSize && sameSize != 5)
+                checkForNumbers();
+                for (int i = 0; i < numbers.Length; i++)
                 {
-                    return numbers[i] * (i + 1);
-                } else if (numbers[i] == sameSize)
-                {
-                    return 50;
+                    if (numbers[i] >= sameSize && sameSize != 5)
+                    {
+                        return (i + 1) * sameSize;
+                    }
+                    else if (numbers[i] == 5)
+                    {
+                        return 50;
+                    }
                 }
             }
             return 0;

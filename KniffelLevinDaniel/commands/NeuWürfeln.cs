@@ -1,4 +1,5 @@
-﻿using KniffelLevinDaniel.viemodel;
+﻿using KniffelLevinDaniel.model;
+using KniffelLevinDaniel.viemodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,13 @@ namespace KniffelLevinDaniel.commands
             {
                 dice.Roll();
             }
+            _viewModel.game.CurrentPlayer.checkForStreet(4);
+            _viewModel.game.CurrentPlayer.checkForStreet(5);
+            _viewModel.game.CurrentPlayer.checkForSame(3);
+            _viewModel.game.CurrentPlayer.checkForSame(4);
+            _viewModel.game.CurrentPlayer.checkForSame(5);
+            _viewModel.game.CurrentPlayer.checkForFullHouse();
+            _viewModel.game.CheckNextTurn();
             _viewModel.UpdateDiceValues();
         }
     }

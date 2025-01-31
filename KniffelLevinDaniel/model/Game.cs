@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KniffelLevinDaniel.viemodel;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +16,19 @@ namespace KniffelLevinDaniel.model
 
         public int TurnNumber { get; set; }
 
-        public Player Winner;
+        public Player CurrentPlayer;
 
-        public Game(List<Player> players)
+        public int leftRolls;
+
+        private Viewmodel viewmodel;
+
+        public Game(List<Player> players ,Viewmodel viewmodel)
         {
+            this.viewmodel = viewmodel; 
             Players = players;
             TurnNumber = 0;
+            CurrentPlayer = Players[0];
+            leftRolls = 3;
         }
 
         public Player? GetWinner()
@@ -37,6 +45,23 @@ namespace KniffelLevinDaniel.model
                 }
             }
             return winner;
+        }
+
+        public void CheckNextTurn()
+        {
+            leftRolls--;
+            if (leftRolls == 0)
+            {
+                leftRolls = 3;
+                if (CurrentPlayer == viewmodel.PlayerOne)
+                {
+                    CurrentPlayer = viewmodel.PlayerTwo;
+                }
+                else
+                {
+                    CurrentPlayer = viewmodel.PlayerOne;
+                }
+            }
         }
     }
 }
