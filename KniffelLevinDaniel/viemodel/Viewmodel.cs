@@ -39,7 +39,7 @@ namespace KniffelLevinDaniel.viemodel
 
         private string FormatDiceText(int index)
         {
-            return Dices[index].IsLocked ? $"[{Dices[index].Value}]" : Dices[index].Value.ToString();
+            return Dices[index].IsLocked ? $"{Dices[index].Value}" : Dices[index].Value.ToString();
         }
 
         public void UpdateDiceValues()
@@ -55,7 +55,6 @@ namespace KniffelLevinDaniel.viemodel
         public void ToggleDiceLock(int index)
         {
             Dices[index].ToggleLock();
-            UpdateDiceValues();
         }
     }
 }

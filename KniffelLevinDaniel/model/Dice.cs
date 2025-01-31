@@ -11,7 +11,7 @@ namespace KniffelLevinDaniel.model
         public int Value { get; set; }
         public bool IsLocked { get; set; }
         Random random = new Random();
-        
+
         public Dice()
         {
             IsLocked = false;

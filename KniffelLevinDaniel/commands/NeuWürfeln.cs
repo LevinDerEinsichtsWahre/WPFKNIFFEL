@@ -20,7 +20,7 @@ namespace KniffelLevinDaniel.commands
         {
             foreach (var dice in viewModel.Dices)
             {
-                dice.Roll().ToString();
+                dice.Roll();
             }
             _viewModel.UpdateDiceValues();
         }

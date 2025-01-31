@@ -16,17 +16,11 @@ namespace KniffelLevinDaniel.commands
             _viewModel = viewModel;
         }
 
-        public bool CanExecute(object? parameter)
-        {
-            return parameter is int;
-        }
-
         public override void Execute(object parameter)
         {
-            if (parameter is int index)
-            {
-                _viewModel.ToggleDiceLock(index);
-            }
+            int index = Convert.ToInt32(parameter);
+            _viewModel.ToggleDiceLock(index);
+
         }
     }
 }

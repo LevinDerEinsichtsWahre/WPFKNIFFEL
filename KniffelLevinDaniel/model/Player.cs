@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 namespace KniffelLevinDaniel.model
 {
     public class Player
     {
-        public List<Dice> Dices {  get; set; }
+        public ObservableCollection<Dice> Dices {  get; set; }
         public Score Score { get; set; }
 
         private int[] numbers = new int[] {0,0,0,0,0,0};
 
-        public Player(List<Dice> dices) 
+        public Player(ObservableCollection<Dice> dices) 
         {
             this.Dices = dices;
             Score = new Score();
