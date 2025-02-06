@@ -30,6 +30,7 @@ namespace KniffelLevinDaniel.commands
             _viewModel.game.CurrentPlayer.checkForSame(5);
             _viewModel.game.CurrentPlayer.checkForFullHouse();
             _viewModel.game.CheckNextTurn();
+            _viewModel.game.CurrentPlayer.UpdateViewModelText();
             _viewModel.UpdateDiceValues();
         }
     }

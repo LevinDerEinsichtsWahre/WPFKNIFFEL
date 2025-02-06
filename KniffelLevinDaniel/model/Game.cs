@@ -61,6 +61,10 @@ namespace KniffelLevinDaniel.model
                 {
                     CurrentPlayer = viewmodel.PlayerOne;
                 }
+                foreach (var dice in viewmodel.Dices)
+                {
+                    dice.IsLocked = false;
+                }
             }
         }
     }

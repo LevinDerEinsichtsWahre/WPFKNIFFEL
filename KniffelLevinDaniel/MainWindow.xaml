@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KniffelLevinDaniel"
+        xmlns:local="clr-namespace:KniffelLevinDaniel" xmlns:viemodel="clr-namespace:KniffelLevinDaniel.viemodel" d:DataContext="{d:DesignInstance Type=viemodel:Viewmodel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <Window.Resources>
@@ -67,10 +67,9 @@
             <Label Grid.Row="0" Grid.Column="2" Content="Spieler 2" FontFamily="Impact"/>
 
             <Label Grid.Row="1" Grid.Column="0" Content="Einser" FontFamily="Impact"/>
-            <TextBox x:Name="onePlayerOne" Grid.Row="1" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
-                <Binding Path="onePlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Text="{Binding Path=onePlayerOne}">
             </TextBox>
-            <TextBox x:Name="onePlayerTwo" Grid.Row="1" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+            <TextBox Grid.Row="1" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
                 <Binding Path="onePlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
 
@@ -131,32 +130,27 @@
             </TextBox>
 
             <Label Grid.Row="9" Grid.Column="0" Content="Drilling" FontFamily="Impact"/>
-            <TextBox x:Name="threeOfAKindPlayerOne" Grid.Row="9" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
-                <Binding Path="threeOfAKindPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            <TextBox x:Name="threeOfAKindPlayerOne" Grid.Row="9" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1"  Text="{Binding Path=threeOfAKindPlayerOne}">
             </TextBox>
-            <TextBox x:Name="threeOfAKindPlayerTwo" Grid.Row="9" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
-                <Binding Path="threeOfAKindPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            <TextBox x:Name="threeOfAKindPlayerTwo" Grid.Row="9" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1" Text="{Binding Path=threeOfAKindPlayerTwo}">
             </TextBox>
 
             <Label Grid.Row="10" Grid.Column="0" Content="Vierling" FontFamily="Impact"/>
-            <TextBox x:Name="fourOfAKindPlayerOne" Grid.Row="10" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
-                <Binding Path="fourOfAKindPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            <TextBox x:Name="fourOfAKindPlayerOne" Grid.Row="10" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Text="{Binding Path=fourOfAKindPlayerOne}">
             </TextBox>
             <TextBox x:Name="fourOfAKindPlayerTwo" Grid.Row="10" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
                 <Binding Path="fourOfAKindPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
 
             <Label Grid.Row="11" Grid.Column="0" Content="Full House" FontFamily="Impact"/>
-            <TextBox x:Name="fullHousePlayerOne" Grid.Row="11" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
-                <Binding Path="fullHousePlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            <TextBox x:Name="fullHousePlayerOne" Grid.Row="11" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Text="{Binding Path=fullHousePlayerOne}">
             </TextBox>
             <TextBox x:Name="fullHousePlayerTwo" Grid.Row="11" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
                 <Binding Path="fullHousePlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
 
             <Label Grid.Row="12" Grid.Column="0" Content="Kleine Straße" FontFamily="Impact"/>
-            <TextBox x:Name="smallStreetPlayerOne" Grid.Row="12" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
-                <Binding Path="smallStreetPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            <TextBox x:Name="smallStreetPlayerOne" Grid.Row="12" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Text="{Binding Path=smallStreetPlayerOne}">
             </TextBox>
             <TextBox x:Name="smallStreetPlayerTwo" Grid.Row="12" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
                 <Binding Path="smallStreetPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
