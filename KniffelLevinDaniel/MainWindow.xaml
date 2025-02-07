@@ -67,7 +67,8 @@
             <Label Grid.Row="0" Grid.Column="2" Content="Spieler 2" FontFamily="Impact"/>
 
             <Label Grid.Row="1" Grid.Column="0" Content="Einser" FontFamily="Impact"/>
-            <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Text="{Binding Path=onePlayerOne}">
+            <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="onePlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
             <TextBox Grid.Row="1" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
                 <Binding Path="onePlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
@@ -130,27 +131,32 @@
             </TextBox>
 
             <Label Grid.Row="9" Grid.Column="0" Content="Drilling" FontFamily="Impact"/>
-            <TextBox x:Name="threeOfAKindPlayerOne" Grid.Row="9" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1"  Text="{Binding Path=threeOfAKindPlayerOne}">
+            <TextBox x:Name="threeOfAKindPlayerOne" Grid.Row="9" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="threeOfAKindPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
-            <TextBox x:Name="threeOfAKindPlayerTwo" Grid.Row="9" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1" Text="{Binding Path=threeOfAKindPlayerTwo}">
+            <TextBox x:Name="threeOfAKindPlayerTwo" Grid.Row="9" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="threeOfAKindPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
 
             <Label Grid.Row="10" Grid.Column="0" Content="Vierling" FontFamily="Impact"/>
-            <TextBox x:Name="fourOfAKindPlayerOne" Grid.Row="10" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Text="{Binding Path=fourOfAKindPlayerOne}">
+            <TextBox x:Name="fourOfAKindPlayerOne" Grid.Row="10" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="fourOfAKindPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
             <TextBox x:Name="fourOfAKindPlayerTwo" Grid.Row="10" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
                 <Binding Path="fourOfAKindPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
 
             <Label Grid.Row="11" Grid.Column="0" Content="Full House" FontFamily="Impact"/>
-            <TextBox x:Name="fullHousePlayerOne" Grid.Row="11" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Text="{Binding Path=fullHousePlayerOne}">
+            <TextBox x:Name="fullHousePlayerOne" Grid.Row="11" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="fullHousePlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
             <TextBox x:Name="fullHousePlayerTwo" Grid.Row="11" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
                 <Binding Path="fullHousePlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
 
             <Label Grid.Row="12" Grid.Column="0" Content="Kleine Straße" FontFamily="Impact"/>
-            <TextBox x:Name="smallStreetPlayerOne" Grid.Row="12" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1" Text="{Binding Path=smallStreetPlayerOne}">
+            <TextBox x:Name="smallStreetPlayerOne" Grid.Row="12" Grid.Column="1" IsReadOnly="True" Margin="4,1,4,1">
+                <Binding Path="smallStreetPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
             <TextBox x:Name="smallStreetPlayerTwo" Grid.Row="12" Grid.Column="2" IsReadOnly="True" Margin="4,1,4,1">
                 <Binding Path="smallStreetPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
