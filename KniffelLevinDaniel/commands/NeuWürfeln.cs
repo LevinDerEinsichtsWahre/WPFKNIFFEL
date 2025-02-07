@@ -23,11 +23,6 @@ namespace KniffelLevinDaniel.commands
             {
                 dice.Roll();
             }
-            //viewModel.Dices[0].Value = 2;
-            //viewModel.Dices[1].Value = 2;
-            //viewModel.Dices[2].Value = 3;
-            //viewModel.Dices[3].Value = 4;
-            //viewModel.Dices[4].Value = 1;
             _viewModel.game.CurrentPlayer.checkForStreet();
             _viewModel.game.CurrentPlayer.checkForSame();
             _viewModel.game.CurrentPlayer.checkForFullHouse();

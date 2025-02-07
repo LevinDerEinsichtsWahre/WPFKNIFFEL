@@ -8,8 +8,8 @@ namespace KniffelLevinDaniel.model
 {
     public class Score
     {
-        private int one;
-        public int One
+        private ScoreElement one;
+        public ScoreElement One
         {
             get
             {
@@ -21,8 +21,8 @@ namespace KniffelLevinDaniel.model
             }
         }
 
-        private int two;
-        public int Two
+        private ScoreElement two;
+        public ScoreElement Two
         {
             get
             {
@@ -34,8 +34,8 @@ namespace KniffelLevinDaniel.model
             }
         }
 
-        private int three;
-        public int Three
+        private ScoreElement three;
+        public ScoreElement Three
         {
             get
             {
@@ -47,8 +47,8 @@ namespace KniffelLevinDaniel.model
             }
         }
 
-        private int four;
-        public int Four
+        private ScoreElement four;
+        public ScoreElement Four
         {
             get
             {
@@ -60,8 +60,8 @@ namespace KniffelLevinDaniel.model
             }
         }
 
-        private int five;
-        public int Five
+        private ScoreElement five;
+        public ScoreElement Five
         {
             get
             {
@@ -72,8 +72,8 @@ namespace KniffelLevinDaniel.model
                 five = value;
             }
         }
-        private int six;
-        public int Six
+        private ScoreElement six;
+        public ScoreElement Six
         {
             get
             {
@@ -84,21 +84,21 @@ namespace KniffelLevinDaniel.model
                 six = value;
             }
         }
-        private int bonus = 0;
-        public int Bonus
+        private ScoreElement bonus;
+        public ScoreElement Bonus
         {
             get
             {
                 if (GetCountTop() > 62)
                 {
-                    bonus = 35;
+                    bonus.ScoreValue = 35;
                 }
                 return bonus;
             }
             private set { bonus = value; }
         }
-        private int threeOfAKind;
-        public int ThreeOfAKind
+        private ScoreElement threeOfAKind;
+        public ScoreElement ThreeOfAKind
         {
             get
             {
@@ -109,8 +109,8 @@ namespace KniffelLevinDaniel.model
                 threeOfAKind = value;
             }
         }
-        private int fourOfAKind;
-        public int FourOfAKind
+        private ScoreElement fourOfAKind;
+        public ScoreElement FourOfAKind
         {
             get
             {
@@ -121,8 +121,8 @@ namespace KniffelLevinDaniel.model
                 fourOfAKind = value;
             }
         }
-        private int fullHouse;
-        public int FullHouse
+        private ScoreElement fullHouse;
+        public ScoreElement FullHouse
         {
             get
             {
@@ -133,8 +133,8 @@ namespace KniffelLevinDaniel.model
                 fullHouse = value;
             }
         }
-        private int smallStreet;
-        public int SmallStreet
+        private ScoreElement smallStreet;
+        public ScoreElement SmallStreet
         {
             get
             {
@@ -145,8 +145,8 @@ namespace KniffelLevinDaniel.model
                 smallStreet = value;
             }
         }
-        private int bigStreet;
-        public int BigStreet
+        private ScoreElement bigStreet;
+        public ScoreElement BigStreet
         {
             get
             {
@@ -157,8 +157,8 @@ namespace KniffelLevinDaniel.model
                 bigStreet = value;
             }
         }
-        private int kniffel;
-        public int Kniffel
+        private ScoreElement kniffel;
+        public ScoreElement Kniffel
         {
             get
             {
@@ -169,8 +169,8 @@ namespace KniffelLevinDaniel.model
                 kniffel = value;
             }
         }
-        private int chance;
-        public int Chance
+        private ScoreElement chance;
+        public ScoreElement Chance
         {
             get
             {
@@ -181,20 +181,80 @@ namespace KniffelLevinDaniel.model
                 chance = value;
             }
         }
-
-        public int GetCountTop()
+        private ScoreElement countTop;
+        public ScoreElement CountTop
         {
-            return One + Two + Three + Four + Five + Six;
+            get
+            {
+                countTop.ScoreValue = GetCountTop();
+                return countTop;
+            }
+            set
+            {
+                countTop = value;
+            }
+        }
+        private ScoreElement countDown;
+        public ScoreElement CountDown
+        {
+            get
+            {
+                countDown.ScoreValue = GetCountDown();
+                return countDown;
+            }
+            set
+            {
+                countDown = value;
+            }
+        }
+        private ScoreElement countAll;
+        public ScoreElement CountAll
+        {
+            get
+            {
+                countAll.ScoreValue = GetCountAll();
+                return countAll;
+            }
+            set
+            {
+                countAll = value;
+            }
         }
 
-        public int GetCountDown()
+        private int GetCountTop()
         {
-            return ThreeOfAKind + FourOfAKind + FullHouse + SmallStreet + BigStreet + Kniffel + Chance;
+            return One.ScoreValue + Two.ScoreValue + Three.ScoreValue + Four.ScoreValue + Five.ScoreValue + Six.ScoreValue;
         }
 
-        public int GetCountAll()
+        private int GetCountDown()
+        {
+            return ThreeOfAKind.ScoreValue + FourOfAKind.ScoreValue + FullHouse.ScoreValue + SmallStreet.ScoreValue + BigStreet.ScoreValue + Kniffel.ScoreValue + Chance.ScoreValue;
+        }
+
+        private int GetCountAll()
         {
             return GetCountTop() + GetCountDown();
+        }
+
+        public Score()
+        {
+            one = new ScoreElement(0);
+            two = new ScoreElement(0);
+            three = new ScoreElement(0);
+            four = new ScoreElement(0);
+            five = new ScoreElement(0);
+            six = new ScoreElement(0);
+            bonus = new ScoreElement(0);
+            threeOfAKind = new ScoreElement(0);
+            fourOfAKind = new ScoreElement(0);
+            fullHouse = new ScoreElement(0);
+            smallStreet = new ScoreElement(0);
+            bigStreet = new ScoreElement(0);
+            kniffel = new ScoreElement(0);
+            chance = new ScoreElement(0);
+            countDown = new ScoreElement(0);
+            countTop = new ScoreElement(0);
+            countAll = new ScoreElement(0);
         }
 
     }
