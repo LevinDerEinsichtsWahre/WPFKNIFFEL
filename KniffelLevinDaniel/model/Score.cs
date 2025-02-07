@@ -8,160 +8,177 @@ namespace KniffelLevinDaniel.model
 {
     public class Score
     {
-        public int One 
-        { 
-            get
-            {
-                return One;
-            }
-            set 
-            {
-                One = value;
-            } 
-        }
-        public int Two 
+        private int one;
+        public int One
         {
             get
             {
-                return Two;
+                return one;
             }
             set
             {
-                Two = value;
+                one = value;
             }
         }
-        public int Three 
+
+        private int two;
+        public int Two
         {
             get
             {
-                return Three;
+                return two;
             }
             set
             {
-                Three = value;
+                two = value;
             }
         }
-        public int Four 
+
+        private int three;
+        public int Three
         {
             get
             {
-                return Four;
+                return three;
             }
             set
             {
-                Four = value;
+                three = value;
             }
         }
-        public int Five 
+
+        private int four;
+        public int Four
         {
             get
             {
-                return Five;
+                return four;
             }
             set
             {
-                Five = value;
+                four = value;
             }
         }
-        public int Six 
+
+        private int five;
+        public int Five
         {
             get
             {
-                return Six;
+                return five;
             }
             set
             {
-                Six = value;
+                five = value;
             }
         }
-        public int Bonus 
+        private int six;
+        public int Six
         {
             get
             {
-                int bonus = 0;
+                return six;
+            }
+            set
+            {
+                six = value;
+            }
+        }
+        private int bonus = 0;
+        public int Bonus
+        {
+            get
+            {
                 if (GetCountTop() > 62)
                 {
                     bonus = 35;
                 }
                 return bonus;
             }
-            private set {} 
+            private set { bonus = value; }
         }
-        public int ThreeOfAKind 
+        private int threeOfAKind;
+        public int ThreeOfAKind
         {
             get
             {
-                return ThreeOfAKind;
+                return threeOfAKind;
             }
             set
             {
-                ThreeOfAKind = value;
+                threeOfAKind = value;
             }
         }
-        public int FourOfAKind 
+        private int fourOfAKind;
+        public int FourOfAKind
         {
             get
             {
-                return FourOfAKind;
+                return fourOfAKind;
             }
             set
             {
-                FourOfAKind = value;
+                fourOfAKind = value;
             }
         }
-        public int FullHouse 
+        private int fullHouse;
+        public int FullHouse
         {
             get
             {
-                return FullHouse;
+                return fullHouse;
             }
             set
             {
-                FullHouse = value;
+                fullHouse = value;
             }
         }
-        public int SmallStreet 
+        private int smallStreet;
+        public int SmallStreet
         {
             get
             {
-                return SmallStreet;
+                return smallStreet;
             }
             set
             {
-                SmallStreet = value;
+                smallStreet = value;
             }
         }
-        public int BigStreet 
+        private int bigStreet;
+        public int BigStreet
         {
             get
             {
-                return BigStreet;
+                return bigStreet;
             }
             set
             {
-                BigStreet = value;
+                bigStreet = value;
             }
         }
-        public int Kniffel 
+        private int kniffel;
+        public int Kniffel
         {
             get
             {
-                return Kniffel;
+                return kniffel;
             }
             set
             {
-                Kniffel = value;
+                kniffel = value;
             }
         }
-        public int Chance 
+        private int chance;
+        public int Chance
         {
             get
             {
-                return Chance;
+                return chance;
             }
             set
             {
-                Chance = value;
+                chance = value;
             }
         }
 
@@ -179,6 +196,6 @@ namespace KniffelLevinDaniel.model
         {
             return GetCountTop() + GetCountDown();
         }
-        
+
     }
 }
