@@ -36,7 +36,7 @@ namespace KniffelLevinDaniel.model
             Player? winner = null;
             if (TurnNumber == maxTurns)
             {
-                if (Players[1].Score.GetCountAll() > Players[0].Score.GetCountAll())
+                if (Players[1].Score.CountAll.ScoreValue > Players[0].Score.CountAll.ScoreValue)
                 {
                     winner = Players[1];
                 }else

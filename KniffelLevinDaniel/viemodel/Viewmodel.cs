@@ -11,6 +11,7 @@ namespace KniffelLevinDaniel.viemodel
     {
         public ICommand NeuWürfeln { get; private set; }
         public ICommand LockDice { get; private set; }
+        public ICommand CheckTextBox { get; private set; }
 
         public Game game;
 
@@ -65,6 +66,7 @@ namespace KniffelLevinDaniel.viemodel
         {
             LockDice = new LockDice(this);
             NeuWürfeln = new NeuWürfeln(this);
+            CheckTextBox = new CheckTextBox(this);
             Dices = new ObservableCollection<Dice>();
             for (int i = 0; i < 5; i++)
             {

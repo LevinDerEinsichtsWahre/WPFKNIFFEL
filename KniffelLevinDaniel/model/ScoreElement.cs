@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace KniffelLevinDaniel.model
 {
-    class ScoreElement
+    public class ScoreElement
     {
 
-        public int ScoreValue { get; private set; }
+        public int ScoreValue { get; set; }
 
         public bool IsLocked { get; set; }
 

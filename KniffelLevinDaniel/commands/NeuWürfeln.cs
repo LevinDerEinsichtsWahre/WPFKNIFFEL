@@ -23,7 +23,6 @@ namespace KniffelLevinDaniel.commands
             {
                 dice.Roll();
             }
-            
             _viewModel.game.CurrentPlayer.checkForStreet();
             _viewModel.game.CurrentPlayer.checkForSame();
             _viewModel.game.CurrentPlayer.checkForFullHouse();
