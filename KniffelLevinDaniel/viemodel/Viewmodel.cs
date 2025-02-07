@@ -19,6 +19,10 @@ namespace KniffelLevinDaniel.viemodel
 
         public Player PlayerTwo;
 
+        public string ButtonText { get; set; }
+
+        public bool ButtonReroll { get; set; }
+
         public event PropertyChangedEventHandler? PropertyChanged;
         public ObservableCollection<Dice> Dices { get; private set; }
 
@@ -57,6 +61,7 @@ namespace KniffelLevinDaniel.viemodel
         public string chancePlayerTwo { get;  set; }
         public string allDownPlayerTwo { get;  set; }
         public string allPlayerTwo { get; set; }
+        public bool HasCheckBoxLeft { get; set; }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -64,6 +69,7 @@ namespace KniffelLevinDaniel.viemodel
 
         public Viewmodel()
         {
+            HasCheckBoxLeft = true;
             LockDice = new LockDice(this);
             NeuWürfeln = new NeuWürfeln(this);
             CheckTextBox = new CheckTextBox(this);
@@ -111,6 +117,8 @@ namespace KniffelLevinDaniel.viemodel
             chancePlayerTwo = "0";
             allDownPlayerTwo = "0";
             allPlayerTwo = "0";
+            ButtonText = "Neu würfeln";
+            ButtonReroll = true;
         }
 
         //Dice Methods for the UI 

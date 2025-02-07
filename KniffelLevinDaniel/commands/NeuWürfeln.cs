@@ -26,9 +26,9 @@ namespace KniffelLevinDaniel.commands
             _viewModel.game.CurrentPlayer.checkForStreet();
             _viewModel.game.CurrentPlayer.checkForSame();
             _viewModel.game.CurrentPlayer.checkForFullHouse();
-            _viewModel.game.CheckNextTurn();
             _viewModel.game.CurrentPlayer.UpdateViewModelText();
             _viewModel.UpdateDiceValues();
+            _viewModel.game.CheckNextTurn();
         }
     }
 }

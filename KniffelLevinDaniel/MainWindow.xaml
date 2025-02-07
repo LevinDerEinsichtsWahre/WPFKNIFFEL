@@ -369,7 +369,7 @@
             <Button Grid.Row="4" Grid.Column="9" Content="{Binding Path=Dice3Text}" BorderBrush="{Binding Path=Dice3BorderColor}" Command="{Binding Path=LockDice}" CommandParameter="2" Height="40" Width="40"/>
             <Button Grid.Row="7" Grid.Column="3" Content="{Binding Path=Dice4Text}" BorderBrush="{Binding Path=Dice4BorderColor}" Command="{Binding Path=LockDice}" CommandParameter="3" Height="40" Width="40"/>
             <Button Grid.Row="8" Grid.Column="7" Content="{Binding Path=Dice5Text}" BorderBrush="{Binding Path=Dice5BorderColor}" Command="{Binding Path=LockDice}" CommandParameter="4" Height="40" Width="40"/>
-            <Button Style="{StaticResource RoundBtn}" Grid.Row="11" Grid.Column="4" Grid.ColumnSpan="3" Content="Neu Würfeln" Height="30" Width="100" Command="{Binding Path=NeuWürfeln}" BorderBrush="LightGray" BorderThickness="0.5"/>
+            <Button Style="{StaticResource RoundBtn}" Grid.Row="11" Grid.Column="4" Grid.ColumnSpan="3" Content="{Binding Path=ButtonText}" Height="30" Width="100" Command="{Binding Path=NeuWürfeln}" BorderBrush="LightGray" BorderThickness="0.5" IsEnabled="{Binding Path=ButtonReroll}"/>
         </Grid>
 
     </Grid>

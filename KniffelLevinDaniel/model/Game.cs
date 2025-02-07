@@ -50,9 +50,19 @@ namespace KniffelLevinDaniel.model
         public void CheckNextTurn()
         {
             leftRolls--;
-            if (leftRolls == 0)
+            if (leftRolls == 1)
             {
+                if (viewmodel.HasCheckBoxLeft == true)
+                {
+                    viewmodel.ButtonReroll = false;
+                }
+                viewmodel.ButtonText = "Nächster Spieler";
+            }
+            if (leftRolls == 0 || viewmodel.HasCheckBoxLeft == false)
+            {
+                viewmodel.HasCheckBoxLeft = true;
                 leftRolls = 3;
+                viewmodel.game.CurrentPlayer.Score.ResetUnmarkedScoreElements();
                 if (CurrentPlayer == viewmodel.PlayerOne)
                 {
                     CurrentPlayer = viewmodel.PlayerTwo;

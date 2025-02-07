@@ -16,20 +16,35 @@ namespace KniffelLevinDaniel.model
                 return scoreValue; 
             }
             set 
-            { 
-                if (!IsLocked)
+            {
+                int curretnScoreValue = scoreValue;
+                if (!isLocked)
                 {
                     scoreValue = value;
+                } else
+                {
+                    scoreValue = curretnScoreValue;
                 }
             } 
         }
 
-        public bool IsLocked { get; set; }
+        private bool isLocked; 
+        public bool IsLocked 
+        { 
+            get 
+            {
+                return isLocked;
+            }
+            set
+            {
+                isLocked = value;
+            }
+        }
 
         public ScoreElement(int scoreValue)
         {
             ScoreValue = scoreValue;
-            IsLocked = false;
+            isLocked = false;
         }
 
     }

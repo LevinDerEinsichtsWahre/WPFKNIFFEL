@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace KniffelLevinDaniel.model
 {
@@ -255,6 +258,27 @@ namespace KniffelLevinDaniel.model
             countDown = new ScoreElement(0);
             countTop = new ScoreElement(0);
             countAll = new ScoreElement(0);
+        }
+
+        public void ResetUnmarkedScoreElements()
+        {
+            one.ScoreValue = 0;
+            two.ScoreValue = 0;
+            three.ScoreValue = 0;
+            four.ScoreValue = 0;
+            five.ScoreValue = 0;
+            six.ScoreValue = 0;
+            bonus.ScoreValue = 0;
+            threeOfAKind.ScoreValue = 0;
+            fourOfAKind.ScoreValue = 0;
+            fullHouse.ScoreValue = 0;
+            smallStreet.ScoreValue = 0;
+            bigStreet.ScoreValue = 0;
+            kniffel.ScoreValue = 0;
+            chance.ScoreValue = 0;
+            countDown.ScoreValue = 0;
+            countTop.ScoreValue = 0;
+            countAll.ScoreValue = 0;
         }
 
     }
