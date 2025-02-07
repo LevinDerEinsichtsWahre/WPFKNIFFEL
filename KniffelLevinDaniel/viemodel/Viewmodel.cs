@@ -37,6 +37,16 @@ namespace KniffelLevinDaniel.viemodel
         public string Dice4Text => FormatDiceText(3);
         public string Dice5Text => FormatDiceText(4);
 
+        public string Dice1BorderColor => GetDiceBorderColor(0);
+        public string Dice2BorderColor => GetDiceBorderColor(1);
+        public string Dice3BorderColor => GetDiceBorderColor(2);
+        public string Dice4BorderColor => GetDiceBorderColor(3);
+        public string Dice5BorderColor => GetDiceBorderColor(4);
+
+        private string GetDiceBorderColor(int index)
+        {
+            return Dices[index].IsLocked ? "Red" : "Black"; // Locked = Red, Unlocked = Black
+        }
         private string FormatDiceText(int index)
         {
             return Dices[index].IsLocked ? $"{Dices[index].Value}" : Dices[index].Value.ToString();
@@ -49,6 +59,12 @@ namespace KniffelLevinDaniel.viemodel
             OnPropertyChanged(nameof(Dice3Text));
             OnPropertyChanged(nameof(Dice4Text));
             OnPropertyChanged(nameof(Dice5Text));
+
+            OnPropertyChanged(nameof(Dice1BorderColor));
+            OnPropertyChanged(nameof(Dice2BorderColor));
+            OnPropertyChanged(nameof(Dice3BorderColor));
+            OnPropertyChanged(nameof(Dice4BorderColor));
+            OnPropertyChanged(nameof(Dice5BorderColor));
         }
 
         
