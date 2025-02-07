@@ -5,26 +5,26 @@ namespace KniffelLevinDaniel.model
 {
     public class Player
     {
-        public ObservableCollection<Dice> Dices {  get; set; }
+        public ObservableCollection<Dice> Dices { get; set; }
         public Score Score { get; set; }
 
-        private int[] numbers = new int[] {0,0,0,0,0,0};
+        private int[] numbers = new int[] { 0, 0, 0, 0, 0, 0 };
 
         private Viewmodel viewmodel;
 
-        private string playerNumber;
+        public string PlayerNumber;
 
-        public Player(ObservableCollection<Dice> dices, Viewmodel viewmodel, string playerNumber) 
+        public Player(ObservableCollection<Dice> dices, Viewmodel viewmodel, string playerNumber)
         {
             this.viewmodel = viewmodel;
-            this.playerNumber = playerNumber;
+            this.PlayerNumber = playerNumber;
             this.Dices = dices;
             Score = new Score();
         }
 
         public void UpdateViewModelText()
         {
-            if (playerNumber == "One")
+            if (PlayerNumber == "Player One")
             {
                 viewmodel.onePlayerOne = Score.One.ToString();
                 viewmodel.twoPlayerOne = Score.Two.ToString();
@@ -103,12 +103,13 @@ namespace KniffelLevinDaniel.model
             bool hasTwo = false;
             bool hasThree = false;
             checkForNumbers();
-            foreach (var number in numbers) 
+            foreach (var number in numbers)
             {
                 if (number == 2)
                 {
                     hasTwo = true;
-                }else if(number == 3)
+                }
+                else if (number == 3)
                 {
                     hasThree = true;
                 }
@@ -119,61 +120,62 @@ namespace KniffelLevinDaniel.model
             }
         }
 
-        public void checkForStreet(int streetSize)
+        public void checkForStreet()
         {
             checkForNumbers();
-            if (streetSize == 4 || streetSize == 5)
+            int hasMinOne = 0;
+            foreach (var number in numbers)
             {
-                int hasMinOne = 0;
-                foreach (var number in numbers)
+                if (number > 0)
                 {
-                    if (number > 0)
+                    hasMinOne++;
+                }
+            }
+            if (hasMinOne >= 4)
+            {
+                int isInRow = 0;
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    if (numbers[i] > 0)
                     {
-                        hasMinOne++;
+                        isInRow++;
+                    }
+                    else if (isInRow <= 3 && !(numbers[i] > 0))
+                    {
+                        isInRow = 0;
+                    }
+                    else if (isInRow == 4 && !(numbers[i] > 0))
+                    {
+                        break;
                     }
                 }
-                if (hasMinOne >= streetSize)
+                if (isInRow == 4)
                 {
-                    int isInRow = 1;
-                    int lastNumber = numbers[0];
-                    for (int i = 1; i < numbers.Length; i++)
-                    {
-                        if (numbers[i] > 0 && lastNumber > 0)
-                        {
-                            isInRow++;
-                        }
-                        else if (isInRow != streetSize && !(numbers[i] > 0 && lastNumber > 0))
-                        {
-                            isInRow = 0;
-                        }
-                        lastNumber = numbers[i];
-                    }
-                    if (isInRow == streetSize && streetSize == 4)
-                    {
-                        Score.SmallStreet = 30;
-                    }else if (isInRow == streetSize && streetSize == 5)
-                    {
-                        Score.BigStreet = 40;
-                    }
+                    Score.SmallStreet = 30;
+                }
+                else if (isInRow == 5)
+                {
+                    Score.BigStreet = 40;
                 }
             }
         }
 
-        public void checkForSame(int sameSize)
+        public void checkForSame()
         {
-            if (sameSize == 3 || sameSize == 4 || sameSize == 5)
+            checkForNumbers();
+            for (int i = 0; i < numbers.Length; i++)
             {
-                checkForNumbers();
-                for (int i = 0; i < numbers.Length; i++)
+                if (numbers[i] >= 3)
                 {
-                    int number = numbers[i];
-                    int sameValue = (i + 1) * number;
-                    switch (number)
-                    {
-                        case 3: Score.ThreeOfAKind = sameValue; break;
-                        case 4: Score.FourOfAKind = sameValue; break;
-                        case 5: Score.Kniffel = 50; break;
-                    } 
+                    Score.ThreeOfAKind = (i + 1) * 3;
+                }
+                if (numbers[i] >= 4)
+                {
+                    Score.FourOfAKind = (i + 1) * 4;
+                }
+                if (numbers[i] == 5)
+                {
+                    Score.Kniffel = 50;
                 }
             }
         }

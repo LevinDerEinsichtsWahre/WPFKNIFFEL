@@ -21,6 +21,7 @@ namespace KniffelLevinDaniel.viemodel
         public event PropertyChangedEventHandler? PropertyChanged;
         public ObservableCollection<Dice> Dices { get; private set; }
 
+        public string currentPlayer { get; set; }
         public string onePlayerOne { get;  set; }
         public string twoPlayerOne { get;  set; }
         public string threePlayerOne { get;  set; }
@@ -69,8 +70,9 @@ namespace KniffelLevinDaniel.viemodel
             {
                 Dices.Add(new Dice());
             }
-            PlayerOne = new Player(Dices, this, "One");
-            PlayerTwo = new Player(Dices, this, "Two");
+            PlayerOne = new Player(Dices, this, "Player One");
+            PlayerTwo = new Player(Dices, this, "Player Two");
+            currentPlayer = PlayerOne.PlayerNumber;
             List<Player> players = new List<Player> { PlayerOne, PlayerTwo };
             game = new Game(players, this);
             onePlayerOne = "0";
@@ -134,6 +136,11 @@ namespace KniffelLevinDaniel.viemodel
         public void ToggleDiceLock(int index)
         {
             Dices[index].ToggleLock();
+        }
+
+        public void UpdateCurrentPlayer()
+        {
+            OnPropertyChanged(nameof(currentPlayer));
         }
 
         public void updateTextUi()

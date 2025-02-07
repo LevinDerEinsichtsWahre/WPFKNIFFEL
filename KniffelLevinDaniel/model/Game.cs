@@ -56,15 +56,18 @@ namespace KniffelLevinDaniel.model
                 if (CurrentPlayer == viewmodel.PlayerOne)
                 {
                     CurrentPlayer = viewmodel.PlayerTwo;
+                    viewmodel.currentPlayer = CurrentPlayer.PlayerNumber;
                 }
                 else
                 {
                     CurrentPlayer = viewmodel.PlayerOne;
+                    viewmodel.currentPlayer = CurrentPlayer.PlayerNumber;
                 }
                 foreach (var dice in viewmodel.Dices)
                 {
                     dice.IsLocked = false;
                 }
+                viewmodel.UpdateCurrentPlayer();
             }
         }
     }

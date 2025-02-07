@@ -234,6 +234,11 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+
+            <TextBox x:Name="currentPlayer" Grid.Row="0" Grid.Column="4" IsReadOnly="True" Grid.ColumnSpan="4">
+                <Binding Path="currentPlayer" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
+            </TextBox>
+
             <Button Grid.Row="2" Grid.Column="6" Content="{Binding Path=Dice1Text}" Command="{Binding Path=LockDice}" CommandParameter="0" Height="50" Width="50"/>
             <Button Grid.Row="3" Grid.Column="2" Content="{Binding Path=Dice2Text}" Command="{Binding Path=LockDice}" CommandParameter="1" Height="50" Width="50"/>
             <Button Grid.Row="4" Grid.Column="9" Content="{Binding Path=Dice3Text}" Command="{Binding Path=LockDice}" CommandParameter="2" Height="50" Width="50"/>
