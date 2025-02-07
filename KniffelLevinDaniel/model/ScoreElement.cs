@@ -8,8 +8,21 @@ namespace KniffelLevinDaniel.model
 {
     public class ScoreElement
     {
-
-        public int ScoreValue { get; set; }
+        private int scoreValue;
+        public int ScoreValue 
+        { 
+            get 
+            { 
+                return scoreValue; 
+            }
+            set 
+            { 
+                if (!IsLocked)
+                {
+                    scoreValue = value;
+                }
+            } 
+        }
 
         public bool IsLocked { get; set; }
 
