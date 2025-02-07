@@ -20,6 +20,7 @@ namespace KniffelLevinDaniel.commands
         {
             int index = Convert.ToInt32(parameter);
             _viewModel.ToggleDiceLock(index);
+            _viewModel.UpdateDiceColor();
 
         }
     }

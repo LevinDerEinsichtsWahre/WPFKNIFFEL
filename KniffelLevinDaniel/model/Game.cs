@@ -66,6 +66,7 @@ namespace KniffelLevinDaniel.model
                 foreach (var dice in viewmodel.Dices)
                 {
                     dice.IsLocked = false;
+                    viewmodel.UpdateDiceColor();
                 }
                 viewmodel.UpdateCurrentPlayer();
             }
