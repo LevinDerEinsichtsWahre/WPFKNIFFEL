@@ -21,5 +21,10 @@ namespace KniffelLevinDaniel
             InitializeComponent();
             DataContext = new viemodel.Viewmodel();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
