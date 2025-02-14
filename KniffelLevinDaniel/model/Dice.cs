@@ -30,5 +30,13 @@ namespace KniffelLevinDaniel.model
         {
             IsLocked = !IsLocked;
         }
+
+        public void ResetValue()
+        {
+            if (!IsLocked)
+            {
+                Value = 0;
+            }
+        }
     }
 }

@@ -41,6 +41,7 @@ namespace KniffelLevinDaniel.commands
                 }
                 _viewModel.HasCheckBoxLeft = false;
                 _viewModel.ButtonText = "Nächster Spieler";
+                _viewModel.UpdateButtonText();
             }
         }
     }

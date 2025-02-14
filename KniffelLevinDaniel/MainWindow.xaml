@@ -175,29 +175,17 @@
             <Label Grid.Row="7" Grid.Column="0" Content="Bonus" FontFamily="Impact"/>
             <TextBox x:Name="bonusPlayerOne" Grid.Row="7" Grid.Column="1" IsReadOnly="True"  Background="#CAE0BC">
                 <Binding Path="bonusPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-                <TextBox.InputBindings>
-                    <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="bonus" MouseAction="LeftClick" />
-                </TextBox.InputBindings>
             </TextBox>
             <TextBox x:Name="bonusPlayerTwo" Grid.Row="7" Grid.Column="2" IsReadOnly="True"  Background="#CAE0BC">
                 <Binding Path="bonusPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-                <TextBox.InputBindings>
-                    <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="bonus" MouseAction="LeftClick" />
-                </TextBox.InputBindings>
             </TextBox>
 
             <Label Grid.Row="8" Grid.Column="0" Content="Gesamt Oben" FontFamily="Impact"/>
             <TextBox x:Name="allUpPlayerOne" Grid.Row="8" Grid.Column="1" IsReadOnly="True"  Background="#CAE0BC">
                 <Binding Path="allUpPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-                <TextBox.InputBindings>
-                    <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="allUp" MouseAction="LeftClick" />
-                </TextBox.InputBindings>
             </TextBox>
             <TextBox x:Name="allUpPlayerTwo" Grid.Row="8" Grid.Column="2" IsReadOnly="True"  Background="#CAE0BC">
                 <Binding Path="allUpPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-                <TextBox.InputBindings>
-                    <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="allUp" MouseAction="LeftClick" />
-                </TextBox.InputBindings>
             </TextBox>
 
             <Label Grid.Row="9" Grid.Column="0" Content="Drilling" FontFamily="Impact"/>
@@ -301,29 +289,17 @@
             <Label Grid.Row="16" Grid.Column="0" Content="Gesamt Unten" FontFamily="Impact"/>
             <TextBox x:Name="allDownPlayerOne" Grid.Row="16" Grid.Column="1" IsReadOnly="True"  Background="#CAE0BC">
                 <Binding Path="allDownPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-                <TextBox.InputBindings>
-                    <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="allDown" MouseAction="LeftClick" />
-                </TextBox.InputBindings>
             </TextBox>
             <TextBox x:Name="allDownPlayerTwo" Grid.Row="16" Grid.Column="2" IsReadOnly="True"  Background="#CAE0BC">
                 <Binding Path="allDownPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-                <TextBox.InputBindings>
-                    <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="allDown" MouseAction="LeftClick" />
-                </TextBox.InputBindings>
             </TextBox>
 
             <Label Grid.Row="17" Grid.Column="0" Content="Gesamt" FontFamily="Impact"/>
             <TextBox x:Name="allPlayerOne" Grid.Row="17" Grid.Column="1" IsReadOnly="True"  Background="#CAE0BC">
                 <Binding Path="allPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-                <TextBox.InputBindings>
-                    <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="all" MouseAction="LeftClick" />
-                </TextBox.InputBindings>
             </TextBox>
             <TextBox x:Name="allPlayerTwo" Grid.Row="17" Grid.Column="2" IsReadOnly="True"  Background="#CAE0BC">
                 <Binding Path="allPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
-                <TextBox.InputBindings>
-                    <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="all" MouseAction="LeftClick" />
-                </TextBox.InputBindings>
             </TextBox>
 
         </Grid>

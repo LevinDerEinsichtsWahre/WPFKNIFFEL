@@ -117,7 +117,7 @@ namespace KniffelLevinDaniel.viemodel
             chancePlayerTwo = "0";
             allDownPlayerTwo = "0";
             allPlayerTwo = "0";
-            ButtonText = "Neu würfeln";
+            ButtonText = "Neu Würfeln";
             ButtonReroll = true;
         }
 
@@ -158,7 +158,7 @@ namespace KniffelLevinDaniel.viemodel
             OnPropertyChanged(nameof(Dice2Text));
             OnPropertyChanged(nameof(Dice3Text));
             OnPropertyChanged(nameof(Dice4Text));
-            OnPropertyChanged(nameof(Dice5Text));            
+            OnPropertyChanged(nameof(Dice5Text));
         }
 
 
@@ -170,6 +170,11 @@ namespace KniffelLevinDaniel.viemodel
         public void UpdateCurrentPlayer()
         {
             OnPropertyChanged(nameof(currentPlayer));
+        }
+
+        public void UpdateButtonText()
+        {
+            OnPropertyChanged(nameof(ButtonText));
         }
 
         public void updateTextUi()

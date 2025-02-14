@@ -42,7 +42,7 @@ namespace KniffelLevinDaniel.model
                 viewmodel.kniffelPlayerOne = Score.Kniffel.ScoreValue.ToString();
                 viewmodel.chancePlayerOne = Score.Chance.ScoreValue.ToString();
                 viewmodel.allDownPlayerOne = Score.CountDown.ScoreValue.ToString();
-                viewmodel.allPlayerOne = Score.CountDown.ScoreValue.ToString();
+                viewmodel.allPlayerOne = Score.CountAll.ScoreValue.ToString();
             }
             else
             {

@@ -28,7 +28,7 @@ namespace KniffelLevinDaniel.model
             Players = players;
             TurnNumber = 0;
             CurrentPlayer = Players[0];
-            leftRolls = 3;
+            leftRolls = 4;
         }
 
         public Player? GetWinner()
@@ -57,11 +57,15 @@ namespace KniffelLevinDaniel.model
                     viewmodel.ButtonReroll = false;
                 }
                 viewmodel.ButtonText = "Nächster Spieler";
+            } else
+            {
+                viewmodel.ButtonText = "Neu Würfeln";
             }
+            viewmodel.UpdateButtonText();
             if (leftRolls == 0 || viewmodel.HasCheckBoxLeft == false)
             {
                 viewmodel.HasCheckBoxLeft = true;
-                leftRolls = 3;
+                leftRolls = 4;
                 viewmodel.game.CurrentPlayer.Score.ResetUnmarkedScoreElements();
                 CurrentPlayer.UpdateViewModelText();
                 if (CurrentPlayer == viewmodel.PlayerOne)
@@ -80,7 +84,39 @@ namespace KniffelLevinDaniel.model
                     viewmodel.UpdateDiceColor();
                 }
                 viewmodel.UpdateCurrentPlayer();
+                NextReroll();
             }
         }
+
+        public void NextReroll()
+        {
+            if (!(leftRolls <= 1 && viewmodel.HasCheckBoxLeft))
+            {
+                if (viewmodel.HasCheckBoxLeft)
+                {
+                    foreach (var dice in viewmodel.Dices)
+                    {
+                        dice.ResetValue();
+                    }
+                    viewmodel.UpdateDiceValues();
+                    Task.Delay(200).ContinueWith(_ =>
+                    {
+                        foreach (var dice in viewmodel.Dices)
+                        {
+                            dice.Roll();
+                        }
+                        CurrentPlayer.checkForStreet();
+                        CurrentPlayer.checkForSame();
+                        CurrentPlayer.checkForFullHouse();
+                        CurrentPlayer.UpdateViewModelText();
+                        viewmodel.UpdateDiceValues();
+
+                    }
+                    );
+                }
+                CheckNextTurn();
+            }
+        }
+
     }
 }
