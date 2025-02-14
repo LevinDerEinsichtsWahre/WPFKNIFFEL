@@ -9,33 +9,29 @@ namespace KniffelLevinDaniel.model
     public class ScoreElement
     {
         private int scoreValue;
-        public int ScoreValue 
-        { 
-            get 
-            { 
-                return scoreValue; 
-            }
-            set 
+        public int ScoreValue
+        {
+            get
             {
-                int curretnScoreValue = scoreValue;
+                return scoreValue;
+            }
+            set
+            {
                 if (!isLocked)
                 {
                     scoreValue = value;
-                } else
-                {
-                    scoreValue = curretnScoreValue;
                 }
-            } 
+            }
         }
 
-        private bool isLocked; 
-        public bool IsLocked 
-        { 
-            get 
+        private bool isLocked;
+        public bool IsLocked
+        {
+            get
             {
                 return isLocked;
             }
-            set
+            private set
             {
                 isLocked = value;
             }
@@ -43,9 +39,13 @@ namespace KniffelLevinDaniel.model
 
         public ScoreElement(int scoreValue)
         {
-            ScoreValue = scoreValue;
+            this.scoreValue = scoreValue;
             isLocked = false;
         }
 
+        public void LockElement()
+        {
+            this.isLocked = true;
+        }
     }
 }

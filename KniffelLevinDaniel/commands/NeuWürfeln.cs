@@ -19,16 +19,26 @@ namespace KniffelLevinDaniel.commands
 
         public override void Execute(object parameter)
         {
-            foreach (var dice in viewModel.Dices)
+            if (!(_viewModel.game.leftRolls < 2 && _viewModel.HasCheckBoxLeft))
             {
-                dice.Roll();
+                if (_viewModel.HasCheckBoxLeft)
+                {
+                    foreach (var dice in viewModel.Dices)
+                    {
+                        dice.Roll();
+                    }
+                    _viewModel.game.CurrentPlayer.checkForStreet();
+                    _viewModel.game.CurrentPlayer.checkForSame();
+                    _viewModel.game.CurrentPlayer.checkForFullHouse();
+                    _viewModel.game.CurrentPlayer.UpdateViewModelText();
+                    _viewModel.UpdateDiceValues();
+                }
+                _viewModel.game.CheckNextTurn();
             }
-            _viewModel.game.CurrentPlayer.checkForStreet();
-            _viewModel.game.CurrentPlayer.checkForSame();
-            _viewModel.game.CurrentPlayer.checkForFullHouse();
-            _viewModel.game.CurrentPlayer.UpdateViewModelText();
-            _viewModel.UpdateDiceValues();
-            _viewModel.game.CheckNextTurn();
+            else
+            {
+                _viewModel.ButtonText = "Nächster Spieler";
+            }
         }
     }
 }

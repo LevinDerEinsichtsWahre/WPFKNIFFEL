@@ -63,6 +63,7 @@ namespace KniffelLevinDaniel.model
                 viewmodel.HasCheckBoxLeft = true;
                 leftRolls = 3;
                 viewmodel.game.CurrentPlayer.Score.ResetUnmarkedScoreElements();
+                CurrentPlayer.UpdateViewModelText();
                 if (CurrentPlayer == viewmodel.PlayerOne)
                 {
                     CurrentPlayer = viewmodel.PlayerTwo;
