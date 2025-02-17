@@ -118,14 +118,5 @@ namespace KniffelLevinDaniel.model
             }
         }
 
-        public bool checkForEnd()
-        {
-            if (viewmodel.PlayerOne.CheckForUnlockedScore() && viewmodel.PlayerTwo.CheckForUnlockedScore())
-            {
-                return true;
-            }
-            return false;
-        }
-
     }
 }

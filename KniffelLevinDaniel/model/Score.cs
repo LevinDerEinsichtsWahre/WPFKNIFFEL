@@ -226,12 +226,66 @@ namespace KniffelLevinDaniel.model
 
         private int GetCountTop()
         {
-            return One.ScoreValue + Two.ScoreValue + Three.ScoreValue + Four.ScoreValue + Five.ScoreValue + Six.ScoreValue;
+            int returnInt = 0;
+            if (One.IsLocked)
+            {
+                returnInt += One.ScoreValue;
+            }
+            if (Two.IsLocked)
+            {
+                returnInt += Two.ScoreValue;
+            }
+            if (Three.IsLocked)
+            {
+                returnInt += Three.ScoreValue;
+            }
+            if (Four.IsLocked)
+            {
+                returnInt += Four.ScoreValue;
+            }
+            if (Five.IsLocked)
+            {
+                returnInt += Five.ScoreValue;
+            }
+            if (Six.IsLocked)
+            {
+                returnInt += Six.ScoreValue;
+            }
+            return returnInt;
         }
 
         private int GetCountDown()
         {
-            return ThreeOfAKind.ScoreValue + FourOfAKind.ScoreValue + FullHouse.ScoreValue + SmallStreet.ScoreValue + BigStreet.ScoreValue + Kniffel.ScoreValue + Chance.ScoreValue;
+            int returnInt = 0;
+            if (ThreeOfAKind.IsLocked)
+            {
+                returnInt += ThreeOfAKind.ScoreValue;
+            }
+            if (FourOfAKind.IsLocked)
+            {
+                returnInt += FourOfAKind.ScoreValue;
+            }
+            if (FullHouse.IsLocked)
+            {
+                returnInt += FullHouse.ScoreValue;
+            }
+            if (SmallStreet.IsLocked)
+            {
+                returnInt += SmallStreet.ScoreValue;
+            }
+            if (BigStreet.IsLocked)
+            {
+                returnInt += BigStreet.ScoreValue;
+            }
+            if (Kniffel.IsLocked)
+            {
+                returnInt += Kniffel.ScoreValue;
+            }
+            if (Chance.IsLocked)
+            {
+                returnInt += Chance.ScoreValue;
+            }
+            return returnInt;
         }
 
         private int GetCountAll()

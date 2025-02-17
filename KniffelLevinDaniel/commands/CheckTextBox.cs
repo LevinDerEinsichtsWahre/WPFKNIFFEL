@@ -82,10 +82,7 @@ namespace KniffelLevinDaniel.commands
                 _viewModel.HasCheckBoxLeft = false;
                 _viewModel.ButtonText = "Nächster Spieler";
                 _viewModel.UpdateButtonText();
-                if (_viewModel.game.checkForEnd())
-                {
-                    _viewModel.ButtonText = "Neues Spiel";
-                }
+                _viewModel.game.CurrentPlayer.UpdateViewModelText();
             }
         }
     }

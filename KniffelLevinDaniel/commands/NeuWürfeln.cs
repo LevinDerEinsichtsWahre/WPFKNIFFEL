@@ -19,12 +19,7 @@ namespace KniffelLevinDaniel.commands
 
         public override void Execute(object parameter)
         {
-            if (_viewModel.ButtonText != "Neues Spiel")
-            {
-                _viewModel.game.NextReroll();
-            }
-            _viewModel.PlayerOne.UnLockScoreElements();
-            _viewModel.PlayerTwo.UnLockScoreElements();
+            _viewModel.game.NextReroll();
         }
     }
 }
