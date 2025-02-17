@@ -61,6 +61,33 @@ namespace KniffelLevinDaniel.viemodel
         public string chancePlayerTwo { get;  set; }
         public string allDownPlayerTwo { get;  set; }
         public string allPlayerTwo { get; set; }
+
+        public bool onePlayerOneColor { get;  set; }
+        public bool twoPlayerOneColor { get;  set; }
+        public bool threePlayerOneColor { get;  set; }
+        public bool fourPlayerOneColor { get;  set; }
+        public bool fivePlayerOneColor { get;  set; }
+        public bool sixPlayerOneColor { get;  set; }
+        public bool threeOfAKindPlayerOneColor { get;  set; }
+        public bool fourOfAKindPlayerOneColor { get;  set; }
+        public bool fullHousePlayerOneColor { get;  set; }
+        public bool smallStreetPlayerOneColor { get;  set; }
+        public bool bigStreetPlayerOneColor { get;  set; }
+        public bool kniffelPlayerOneColor { get;  set; }
+        public bool chancePlayerOneColor { get;  set; }
+        public bool onePlayerTwoColor { get;  set; }
+        public bool twoPlayerTwoColor { get;  set; }
+        public bool threePlayerTwoColor { get;  set; }
+        public bool fourPlayerTwoColor { get;  set; }
+        public bool fivePlayerTwoColor { get;  set; }
+        public bool sixPlayerTwoColor { get;  set; }
+        public bool threeOfAKindPlayerTwoColor { get;  set; }
+        public bool fourOfAKindPlayerTwoColor { get;  set; }
+        public bool fullHousePlayerTwoColor { get;  set; }
+        public bool smallStreetPlayerTwoColor { get;  set; }
+        public bool bigStreetPlayerTwoColor { get;  set; }
+        public bool kniffelPlayerTwoColor { get;  set; }
+        public bool chancePlayerTwoColor { get;  set; }
         public bool HasCheckBoxLeft { get; set; }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -117,6 +144,32 @@ namespace KniffelLevinDaniel.viemodel
             chancePlayerTwo = "0";
             allDownPlayerTwo = "0";
             allPlayerTwo = "0";
+            onePlayerOneColor = true;
+            twoPlayerOneColor = true;
+            threePlayerOneColor = true;
+            fourPlayerOneColor = true;
+            fivePlayerOneColor = true;
+            sixPlayerOneColor = true;
+            threeOfAKindPlayerOneColor = true;
+            fourOfAKindPlayerOneColor = true;
+            fullHousePlayerOneColor = true;
+            smallStreetPlayerOneColor = true;
+            bigStreetPlayerOneColor = true;
+            kniffelPlayerOneColor = true;
+            chancePlayerOneColor = true;
+            onePlayerTwoColor = true;
+            twoPlayerTwoColor = true;
+            threePlayerTwoColor = true;
+            fourPlayerTwoColor = true;
+            fivePlayerTwoColor = true;
+            sixPlayerTwoColor = true;
+            threeOfAKindPlayerTwoColor = true;
+            fourOfAKindPlayerTwoColor = true;
+            fullHousePlayerTwoColor = true;
+            smallStreetPlayerTwoColor = true;
+            bigStreetPlayerTwoColor = true;
+            kniffelPlayerTwoColor = true;
+            chancePlayerTwoColor = true;
             ButtonText = "Neu Würfeln";
             ButtonReroll = true;
         }
@@ -246,6 +299,62 @@ namespace KniffelLevinDaniel.viemodel
             OnPropertyChanged(nameof(allDownPlayerTwo));
 
             OnPropertyChanged(nameof(allPlayerTwo));
+        }
+
+        public void UpdateTextBoxBorder()
+        {
+
+            OnPropertyChanged(nameof(onePlayerOneColor));
+
+            OnPropertyChanged(nameof(twoPlayerOneColor));
+
+            OnPropertyChanged(nameof(threePlayerOneColor));
+
+            OnPropertyChanged(nameof(fourPlayerOneColor));
+
+            OnPropertyChanged(nameof(fivePlayerOneColor));
+
+            OnPropertyChanged(nameof(sixPlayerOneColor));
+
+            OnPropertyChanged(nameof(threeOfAKindPlayerOneColor));
+
+            OnPropertyChanged(nameof(fourOfAKindPlayerOneColor));
+
+            OnPropertyChanged(nameof(fullHousePlayerOneColor));
+
+            OnPropertyChanged(nameof(smallStreetPlayerOneColor));
+
+            OnPropertyChanged(nameof(bigStreetPlayerOneColor));
+
+            OnPropertyChanged(nameof(kniffelPlayerOneColor));
+
+            OnPropertyChanged(nameof(chancePlayerOneColor));
+
+            OnPropertyChanged(nameof(onePlayerTwoColor));
+
+            OnPropertyChanged(nameof(twoPlayerTwoColor));
+
+            OnPropertyChanged(nameof(threePlayerTwoColor));
+
+            OnPropertyChanged(nameof(fourPlayerTwoColor));
+
+            OnPropertyChanged(nameof(fivePlayerTwoColor));
+
+            OnPropertyChanged(nameof(sixPlayerTwoColor));
+
+            OnPropertyChanged(nameof(threeOfAKindPlayerTwoColor));
+
+            OnPropertyChanged(nameof(fourOfAKindPlayerTwoColor));
+
+            OnPropertyChanged(nameof(fullHousePlayerTwoColor));
+
+            OnPropertyChanged(nameof(smallStreetPlayerTwoColor));
+
+            OnPropertyChanged(nameof(bigStreetPlayerTwoColor));
+
+            OnPropertyChanged(nameof(kniffelPlayerTwoColor));
+
+            OnPropertyChanged(nameof(chancePlayerTwoColor));
         }
 
     }

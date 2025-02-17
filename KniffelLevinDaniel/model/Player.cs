@@ -1,6 +1,7 @@
 ﻿using KniffelLevinDaniel.viemodel;
 using System;
 using System.Collections.ObjectModel;
+using static System.Formats.Asn1.AsnWriter;
 namespace KniffelLevinDaniel.model
 {
     public class Player
@@ -178,6 +179,37 @@ namespace KniffelLevinDaniel.model
                     Score.Kniffel.ScoreValue = 50;
                 }
             }
+        }
+
+        public bool CheckForUnlockedScore()
+        {
+            if (
+                Score.One.IsLocked && Score.Two.IsLocked && 
+                Score.Three.IsLocked && Score.Four.IsLocked && Score.Five.IsLocked && 
+                Score.Six.IsLocked && Score.ThreeOfAKind.IsLocked && Score.FourOfAKind.IsLocked &&
+                Score.FullHouse.IsLocked && Score.SmallStreet.IsLocked && Score.BigStreet.IsLocked &&
+                Score.Kniffel.IsLocked && Score.Chance.IsLocked)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void UnLockScoreElements()
+        {
+            Score.One.UnLockElement();
+            Score.Two.LockElement();
+            Score.Three.LockElement();
+            Score.Four.LockElement();
+            Score.Five.LockElement();
+            Score.Six.LockElement();
+            Score.FullHouse.LockElement();
+            Score.SmallStreet.LockElement();
+            Score.BigStreet.LockElement();
+            Score.ThreeOfAKind.LockElement();
+            Score.FourOfAKind.LockElement();
+            Score.Kniffel.LockElement();
+            Score.Chance.LockElement();
         }
     }
 }

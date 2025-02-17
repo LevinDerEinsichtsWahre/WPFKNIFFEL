@@ -29,11 +29,14 @@
                     <ControlTemplate TargetType="TextBox">
                         <Border x:Name="Border"
                         CornerRadius="4"  Background="{TemplateBinding Background}" BorderBrush="Gray" BorderThickness="{TemplateBinding BorderThickness}">
-                        <ScrollViewer Margin="4,1,4,1" x:Name="PART_ContentHost"/>
+                            <ScrollViewer Margin="4,1,4,1" x:Name="PART_ContentHost"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="Border" Property="BorderBrush" Value="DodgerBlue"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="Red"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -89,13 +92,13 @@
             <Label Grid.Row="0" Grid.Column="2" Content="Spieler 2" FontFamily="Impact"/>
 
             <Label Grid.Row="1" Grid.Column="0" Content="Einser" FontFamily="Impact"/>
-            <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True" >
+            <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=onePlayerOneColor}">
                 <Binding Path="onePlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="one" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2" IsReadOnly="True" >
+            <TextBox Grid.Row="1" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=onePlayerTwoColor}">
                 <Binding Path="onePlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="one" MouseAction="LeftClick" />
@@ -103,13 +106,13 @@
             </TextBox>
 
             <Label Grid.Row="2" Grid.Column="0" Content="Zweier" FontFamily="Impact"/>
-            <TextBox x:Name="twoPlayerOne" Grid.Row="2" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="twoPlayerOne" Grid.Row="2" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=twoPlayerOneColor}">
                 <Binding Path="twoPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="two" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="twoPlayerTwo" Grid.Row="2" Grid.Column="2" IsReadOnly="True">
+            <TextBox x:Name="twoPlayerTwo" Grid.Row="2" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=twoPlayerTwoColor}">
                 <Binding Path="twoPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="two" MouseAction="LeftClick" />
@@ -117,13 +120,13 @@
             </TextBox>
 
             <Label Grid.Row="3" Grid.Column="0" Content="Dreier" FontFamily="Impact"/>
-            <TextBox x:Name="threePlayerOne" Grid.Row="3" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="threePlayerOne" Grid.Row="3" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=threePlayerOneColor}">
                 <Binding Path="threePlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="three" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="threePlayerTwo" Grid.Row="3" Grid.Column="2" IsReadOnly="True" >
+            <TextBox x:Name="threePlayerTwo" Grid.Row="3" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=threePlayerTwoColor}">
                 <Binding Path="threePlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="three" MouseAction="LeftClick" />
@@ -131,13 +134,13 @@
             </TextBox>
 
             <Label Grid.Row="4" Grid.Column="0" Content="Vierer" FontFamily="Impact"/>
-            <TextBox x:Name="fourPlayerOne" Grid.Row="4" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="fourPlayerOne" Grid.Row="4" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=fourPlayerOneColor}">
                 <Binding Path="fourPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="four" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="fourPlayerTwo" Grid.Row="4" Grid.Column="2" IsReadOnly="True" >
+            <TextBox x:Name="fourPlayerTwo" Grid.Row="4" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=fourPlayerTwoColor}">
                 <Binding Path="fourPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="four" MouseAction="LeftClick" />
@@ -145,13 +148,13 @@
             </TextBox>
 
             <Label Grid.Row="5" Grid.Column="0" Content="Fünfer" FontFamily="Impact"/>
-            <TextBox x:Name="fivePlayerOne" Grid.Row="5" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="fivePlayerOne" Grid.Row="5" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=fivePlayerOneColor}">
                 <Binding Path="fivePlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="five" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="fivePlayerTwo" Grid.Row="5" Grid.Column="2" IsReadOnly="True" >
+            <TextBox x:Name="fivePlayerTwo" Grid.Row="5" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=fivePlayerTwoColor}">
                 <Binding Path="fivePlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="five" MouseAction="LeftClick" />
@@ -159,13 +162,13 @@
             </TextBox>
 
             <Label Grid.Row="6" Grid.Column="0" Content="Sechser" FontFamily="Impact"/>
-            <TextBox x:Name="sixPlayerOne" Grid.Row="6" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="sixPlayerOne" Grid.Row="6" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=sixPlayerOneColor}">
                 <Binding Path="sixPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="six" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="sixPlayerTwo" Grid.Row="6" Grid.Column="2" IsReadOnly="True" >
+            <TextBox x:Name="sixPlayerTwo" Grid.Row="6" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=sixPlayerTwoColor}">
                 <Binding Path="sixPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="six" MouseAction="LeftClick" />
@@ -189,13 +192,13 @@
             </TextBox>
 
             <Label Grid.Row="9" Grid.Column="0" Content="Drilling" FontFamily="Impact"/>
-            <TextBox x:Name="threeOfAKindPlayerOne" Grid.Row="9" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="threeOfAKindPlayerOne" Grid.Row="9" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=threeOfAKindPlayerOneColor}">
                 <Binding Path="threeOfAKindPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="threeOfAKind" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="threeOfAKindPlayerTwo" Grid.Row="9" Grid.Column="2" IsReadOnly="True" >
+            <TextBox x:Name="threeOfAKindPlayerTwo" Grid.Row="9" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=threeOfAKindPlayerTwoColor}">
                 <Binding Path="threeOfAKindPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="threeOfAKind" MouseAction="LeftClick" />
@@ -203,13 +206,13 @@
             </TextBox>
 
             <Label Grid.Row="10" Grid.Column="0" Content="Vierling" FontFamily="Impact"/>
-            <TextBox x:Name="fourOfAKindPlayerOne" Grid.Row="10" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="fourOfAKindPlayerOne" Grid.Row="10" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=fourOfAKindPlayerOneColor}">
                 <Binding Path="fourOfAKindPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="fourOfAKind" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="fourOfAKindPlayerTwo" Grid.Row="10" Grid.Column="2" IsReadOnly="True" >
+            <TextBox x:Name="fourOfAKindPlayerTwo" Grid.Row="10" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=fourOfAKindPlayerTwoColor}">
                 <Binding Path="fourOfAKindPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="fourOfAKind" MouseAction="LeftClick" />
@@ -217,13 +220,13 @@
             </TextBox>
 
             <Label Grid.Row="11" Grid.Column="0" Content="Full House" FontFamily="Impact"/>
-            <TextBox x:Name="fullHousePlayerOne" Grid.Row="11" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="fullHousePlayerOne" Grid.Row="11" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=fullHousePlayerOneColor}">
                 <Binding Path="fullHousePlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="fullHouse" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="fullHousePlayerTwo" Grid.Row="11" Grid.Column="2" IsReadOnly="True" >
+            <TextBox x:Name="fullHousePlayerTwo" Grid.Row="11" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=fullHousePlayerTwoColor}">
                 <Binding Path="fullHousePlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="fullHouse" MouseAction="LeftClick" />
@@ -231,13 +234,13 @@
             </TextBox>
 
             <Label Grid.Row="12" Grid.Column="0" Content="Kleine Straße" FontFamily="Impact"/>
-            <TextBox x:Name="smallStreetPlayerOne" Grid.Row="12" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="smallStreetPlayerOne" Grid.Row="12" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=smallStreetPlayerOneColor}">
                 <Binding Path="smallStreetPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="smallStreet" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="smallStreetPlayerTwo" Grid.Row="12" Grid.Column="2" IsReadOnly="True" >
+            <TextBox x:Name="smallStreetPlayerTwo" Grid.Row="12" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=smallStreetPlayerTwoColor}">
                 <Binding Path="smallStreetPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="smallStreet" MouseAction="LeftClick" />
@@ -245,13 +248,13 @@
             </TextBox>
 
             <Label Grid.Row="13" Grid.Column="0" Content="Große Straße" FontFamily="Impact"/>
-            <TextBox x:Name="bigStreetPlayerOne" Grid.Row="13" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="bigStreetPlayerOne" Grid.Row="13" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=bigStreetPlayerOneColor}">
                 <Binding Path="bigStreetPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="bigStreet" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="bigStreetPlayerTwo" Grid.Row="13" Grid.Column="2" IsReadOnly="True" >
+            <TextBox x:Name="bigStreetPlayerTwo" Grid.Row="13" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=bigStreetPlayerTwoColor}">
                 <Binding Path="bigStreetPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="bigStreet" MouseAction="LeftClick" />
@@ -259,13 +262,13 @@
             </TextBox>
 
             <Label Grid.Row="14" Grid.Column="0" Content="Kniffel" FontFamily="Impact"/>
-            <TextBox x:Name="kniffelPlayerOne" Grid.Row="14" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="kniffelPlayerOne" Grid.Row="14" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=kniffelPlayerOneColor}">
                 <Binding Path="kniffelPlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="kniffel" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="kniffelPlayerTwo" Grid.Row="14" Grid.Column="2" IsReadOnly="True">
+            <TextBox x:Name="kniffelPlayerTwo" Grid.Row="14" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=kniffelPlayerTwoColor}">
                 <Binding Path="kniffelPlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="kniffel" MouseAction="LeftClick" />
@@ -273,13 +276,13 @@
             </TextBox>
 
             <Label Grid.Row="15" Grid.Column="0" Content="Chance" FontFamily="Impact"/>
-            <TextBox x:Name="chancePlayerOne" Grid.Row="15" Grid.Column="1" IsReadOnly="True" >
+            <TextBox x:Name="chancePlayerOne" Grid.Row="15" Grid.Column="1" IsReadOnly="True" IsEnabled="{Binding Path=chancePlayerOneColor}">
                 <Binding Path="chancePlayerOne" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="chance" MouseAction="LeftClick" />
                 </TextBox.InputBindings>
             </TextBox>
-            <TextBox x:Name="chancePlayerTwo" Grid.Row="15" Grid.Column="2" IsReadOnly="True" >
+            <TextBox x:Name="chancePlayerTwo" Grid.Row="15" Grid.Column="2" IsReadOnly="True" IsEnabled="{Binding Path=chancePlayerTwoColor}">
                 <Binding Path="chancePlayerTwo" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
                 <TextBox.InputBindings>
                     <MouseBinding Command="{Binding Path=CheckTextBox}" CommandParameter="chance" MouseAction="LeftClick" />
@@ -335,7 +338,7 @@
             </Grid.ColumnDefinitions>
 
 
-            <TextBox x:Name="currentPlayer" Grid.Row="0" Grid.Column="4" IsReadOnly="True" Grid.ColumnSpan="4">
+            <TextBox x:Name="currentPlayer" Grid.Row="0" Grid.Column="4" IsReadOnly="True" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Binding Path="currentPlayer" UpdateSourceTrigger="PropertyChanged" Delay="300"/>
             </TextBox>
 

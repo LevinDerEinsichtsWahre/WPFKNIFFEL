@@ -47,5 +47,10 @@ namespace KniffelLevinDaniel.model
         {
             this.isLocked = true;
         }
+
+        public void UnLockElement()
+        {
+            this.isLocked = false;
+        }
     }
 }
